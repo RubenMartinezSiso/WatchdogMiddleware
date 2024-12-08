@@ -1,1 +1,2 @@
-# WatchdogMiddleware
+# 🐕Watchdog Middleware
+By Rubén Martínez
