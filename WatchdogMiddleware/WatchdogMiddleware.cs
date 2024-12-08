@@ -14,11 +14,11 @@ namespace WatchdogMiddleware
 {
     public class WatchdogMiddleware
     {
-        private readonly string _influxDbUrl = "https://eu-central-1-1.aws.cloud2.influxdata.com";
-        private readonly string _influxDbToken = "OmRbKtMBWF41NhlOXGJcKBk4J-Im4mE5JhANzPd4nK3ovaUPmk4nMP7jfR2i4jMRFd0Vs1Xuw4SOlUB7ue0fOg==";
-        private readonly string _influxDbOrg = "HttpInterceptor";
-        private readonly string _influxDbBucket = "http_interceptor_logs";
-        private readonly string dataTable = "request5";
+        private readonly string _influxDbUrl = "http://192.168.1.55:8086"; // http://localhost:8086
+        private readonly string _influxDbToken = "token1234";
+        private readonly string _influxDbOrg = "WatchdogOrg";
+        private readonly string _influxDbBucket = "watchdog_logs";
+        private readonly string dataTable = "wd1";
 
         private readonly HttpClient _httpClient = new HttpClient();
         private readonly RequestDelegate _next;
