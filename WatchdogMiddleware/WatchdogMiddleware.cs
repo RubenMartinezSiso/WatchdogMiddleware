@@ -14,10 +14,10 @@ namespace WatchdogMiddleware
 {
     public class WatchdogMiddleware
     {
-        private readonly string _influxDbUrl = "http://192.168.1.55:8086"; // http://localhost:8086
-        private readonly string _influxDbToken = "token1234";
-        private readonly string _influxDbOrg = "WatchdogOrg";
-        private readonly string _influxDbBucket = "watchdog_logs";
+        private readonly string _influxDbUrl = "http://localhost:8086"; // http://localhost:8086 o http://influxdb:8086 o http://192.168.1.55:8086
+        private readonly string _influxDbToken = "1a4aeaa65859e8443d824ee73d82432f";
+        private readonly string _influxDbOrg = "watchdogorg";
+        private readonly string _influxDbBucket = "watchdogbucket";
         private readonly string dataTable = "wd1";
 
         private readonly HttpClient _httpClient = new HttpClient();
@@ -25,9 +25,6 @@ namespace WatchdogMiddleware
         private readonly ILogger<WatchdogMiddleware> _logger;
         private readonly string _logFilePath;
         private readonly string _apiName;
-
-        private List<string> _warnings = new List<string>();
-        private bool _limitExceeded = false;
 
         public WatchdogMiddleware(RequestDelegate next, ILogger<WatchdogMiddleware> logger, string apiName)
         {
@@ -110,6 +107,7 @@ namespace WatchdogMiddleware
         {
             try
             {
+                // ip = "80.26.158.41"; // Madrid, Spain
                 ip = "88.4.135.170"; // Fraga, Spain
                 var response = await _httpClient.GetStringAsync($"http://ip-api.com/json/{ip}");
                 var json = JObject.Parse(response);
@@ -177,6 +175,8 @@ namespace WatchdogMiddleware
                     .Tag("req_api", request.ApiName)
                     .Tag("req_method", request.Method)
                     .Tag("req_path", request.Path)
+                    .Tag("req_route_action", request.RouteAction)
+                    .Tag("req_route_controller", request.RouteController)
 
                     // Request Fields
                     .Field("req_host", request.Host)
@@ -187,8 +187,6 @@ namespace WatchdogMiddleware
                     .Field("req_latitude", request.Latitude)
                     .Field("req_longitude", request.Longitude)
                     .Field("req_body", request.Body)
-                    .Field("req_route_action", request.RouteAction)
-                    .Field("req_route_controller", request.RouteController)
                     .Field("req_headers", JsonConvert.SerializeObject(request.Headers))
 
                     // Response Fields
