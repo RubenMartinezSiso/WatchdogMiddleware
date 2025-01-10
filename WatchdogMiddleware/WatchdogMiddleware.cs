@@ -14,24 +14,29 @@ namespace WatchdogMiddleware
 {
     public class WatchdogMiddleware
     {
-        private readonly string _influxDbUrl = "http://localhost:8086"; // http://localhost:8086 o http://influxdb:8086 o http://192.168.1.55:8086
-        private readonly string _influxDbToken = "1a4aeaa65859e8443d824ee73d82432f";
-        private readonly string _influxDbOrg = "watchdogorg";
-        private readonly string _influxDbBucket = "watchdogbucket";
-        private readonly string dataTable = "wd1";
+        private readonly string _apiName;
+        private readonly string _influxDbUrl;
+        private readonly string _influxDbToken;
+        private readonly string _influxDbOrg;
+        private readonly string _influxDbBucket;
+        private readonly string _dataTable;
+        private readonly bool _activateLogs;
 
         private readonly HttpClient _httpClient = new HttpClient();
         private readonly RequestDelegate _next;
         private readonly ILogger<WatchdogMiddleware> _logger;
-        private readonly string _logFilePath;
-        private readonly string _apiName;
 
-        public WatchdogMiddleware(RequestDelegate next, ILogger<WatchdogMiddleware> logger, string apiName)
+        public WatchdogMiddleware(RequestDelegate next, ILogger<WatchdogMiddleware> logger, string apiName, string influxDbUrl, string influxDbToken, string influxDbOrg, string influxDbBucket, string dataTable, bool activateLogs)
         {
             _next = next;
             _logger = logger;
-            _logFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "interceptor_logs.txt");
             _apiName = apiName;
+            _influxDbUrl = influxDbUrl;
+            _influxDbToken = influxDbToken;
+            _influxDbOrg = influxDbOrg;
+            _influxDbBucket = influxDbBucket;
+            _dataTable = dataTable;
+            _activateLogs = activateLogs;
         }
 
         public async Task InvokeAsync(HttpContext context)
@@ -147,18 +152,6 @@ namespace WatchdogMiddleware
             return body;
         }
 
-        private async Task WriteToLogFileAsync(string logMessage)
-        {
-            try
-            {
-                await System.IO.File.AppendAllTextAsync(_logFilePath, logMessage + Environment.NewLine);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Error writing to log file: {ex.Message}");
-            }
-        }
-
         public async Task WritePointToInfluxDB(InterceptedRequest request, InterceptedResponse response)
         {
             try
@@ -166,7 +159,7 @@ namespace WatchdogMiddleware
                 using var client = InfluxDBClientFactory.Create(_influxDbUrl, _influxDbToken.ToCharArray());
                 var writeApi = client.GetWriteApi();
 
-                var point = PointData.Measurement(dataTable)
+                var point = PointData.Measurement(_dataTable)
 
                     // Timestamp
                     .Timestamp(request.Timestamp, WritePrecision.Ms)
