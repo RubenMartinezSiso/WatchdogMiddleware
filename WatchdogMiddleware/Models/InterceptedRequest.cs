@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace WatchdogMiddleware
 {
-    public class InterceptedRequest
+    internal class InterceptedRequest
     {
         public DateTime Timestamp { get; set; }
         public string ApiName { get; set; }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WatchdogMiddleware.Models
 {
-    public class InterceptedResponse
+    internal class InterceptedResponse
     {
         public DateTime Timestamp { get; set; }
         public TimeSpan Duration { get; set; }

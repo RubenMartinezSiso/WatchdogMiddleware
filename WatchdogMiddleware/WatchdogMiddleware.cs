@@ -25,13 +25,14 @@ namespace WatchdogMiddleware
         private readonly string _influxDbOrg;
         private readonly string _influxDbBucket;
         private readonly string _dataTable;
+        private readonly List<SensitiveRoute> _sensitiveRoutes;
         private readonly bool _activateLogs;
 
         private readonly HttpClient _httpClient;
         private readonly RequestDelegate _next;
         private readonly ILogger<WatchdogMiddleware> _logger;
 
-        public WatchdogMiddleware(RequestDelegate next, ILogger<WatchdogMiddleware> logger, string apiName, string influxDbUrl, string influxDbToken, string influxDbOrg, string influxDbBucket, string dataTable, bool activateLogs)
+        public WatchdogMiddleware(RequestDelegate next, ILogger<WatchdogMiddleware> logger, string apiName, string influxDbUrl, string influxDbToken, string influxDbOrg, string influxDbBucket, string dataTable, bool activateLogs, List<SensitiveRoute> sensitiveRoutes)
         {
             _next = next ?? throw new ArgumentNullException(nameof(next));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -42,6 +43,7 @@ namespace WatchdogMiddleware
             _influxDbBucket = influxDbBucket ?? throw new ArgumentNullException(nameof(influxDbBucket));
             _dataTable = dataTable ?? throw new ArgumentNullException(nameof(dataTable));
             _activateLogs = activateLogs;
+            _sensitiveRoutes = sensitiveRoutes ?? new List<SensitiveRoute>();
             _httpClient = new HttpClient();
         }
 
@@ -50,6 +52,16 @@ namespace WatchdogMiddleware
             if (context == null)
             {
                 throw new ArgumentNullException(nameof(context));
+            }
+
+            var path = context.Request.Path.Value;
+            var method = context.Request.Method.ToUpper();
+            var sensitiveRoute = _sensitiveRoutes.FirstOrDefault(r => r.Path == path && r.Method.ToUpper() == method);
+
+            if (sensitiveRoute != null && sensitiveRoute.DoNotLog)
+            {
+                await _next(context);
+                return;
             }
 
             if (_activateLogs)
@@ -80,6 +92,12 @@ namespace WatchdogMiddleware
                     context.Response.Body = originalBodyStream;
                 }
 
+                if (sensitiveRoute != null && sensitiveRoute.Encrypt)
+                {
+                    request.Body = EncryptBody(request.Body);
+                    response.Body = EncryptBody(response.Body);
+                }
+
                 WritePointToInfluxDB(request, response);
             }
             catch (Exception ex)
@@ -93,6 +111,27 @@ namespace WatchdogMiddleware
             if (_activateLogs)
             {
                 _logger.LogInformation("WatchdogMiddleware: Finished request processing");
+            }
+        }
+
+        private string EncryptBody(string body)
+        {
+            try
+            {
+                using (var sha256 = System.Security.Cryptography.SHA256.Create())
+                {
+                    byte[] inputBytes = System.Text.Encoding.UTF8.GetBytes(body);
+                    byte[] hashBytes = sha256.ComputeHash(inputBytes);
+                    return Convert.ToBase64String(hashBytes);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (_activateLogs)
+                {
+                    _logger.LogError(ex, "WatchdogMiddleware: Error encrypting body");
+                }
+                return string.Empty;
             }
         }
 

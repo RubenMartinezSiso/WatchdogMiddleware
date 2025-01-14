@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using WatchdogMiddleware.Models;
 
 public static class WatchdogMiddlewareExtensions
 {
@@ -12,9 +13,10 @@ public static class WatchdogMiddlewareExtensions
     /// <param name="influxDbBucket">Bucket name in InfluxDB</param>
     /// <param name="dataTable">Name of the table to write data to in InfluxDB</param>
     /// <param name="activateLogs">Activate logs to console (defatult: true)</param>
+    /// <param name="sensitiveRoutes">Sensitive routes that should not be logged</param>
     /// <returns></returns>
-    public static IApplicationBuilder UseWatchdogMiddleware(this IApplicationBuilder builder, string apiName, string influxDbUrl, string influxDbToken, string influxDbOrg, string influxDbBucket, string dataTable, bool activateLogs = true)
+    public static IApplicationBuilder UseWatchdogMiddleware(this IApplicationBuilder builder, string apiName, string influxDbUrl, string influxDbToken, string influxDbOrg, string influxDbBucket, string dataTable, bool activateLogs = true, List<SensitiveRoute> sensitiveRoutes = null)
     {
-        return builder.UseMiddleware<WatchdogMiddleware.WatchdogMiddleware>(apiName, influxDbUrl, influxDbToken, influxDbOrg, influxDbBucket, dataTable, activateLogs);
+        return builder.UseMiddleware<WatchdogMiddleware.WatchdogMiddleware>(apiName, influxDbUrl, influxDbToken, influxDbOrg, influxDbBucket, dataTable, activateLogs, sensitiveRoutes);
     }
 }
