@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  influxdb:
+    image: influxdb:2.7.11
+    volumes:
+      - influxdb-storage:/var/lib/influxdb2:rw
+    env_file:
+      - .env
+    entrypoint: ["./entrypoint.sh"]
+    restart: on-failure:10
+    ports:
+      - ${DOCKER_INFLUXDB_INIT_PORT}:8086
+
+  grafana:
+    build: 
+        context: ./grafana
+    volumes:
+      - grafana-storage:/var/lib/grafana:rw
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    depends_on:
+      - influxdb
+    ports:
+      - ${GRAFANA_PORT}:3000
+    env_file:
+      - .env
+    entrypoint: >
+        /bin/sh -c "
+        python3 /etc/grafana/provisioning/dashboards/modify_dashboard.py &&
+        /run.sh"
+
+volumes:
+  grafana-storage:
+  influxdb-storage:
