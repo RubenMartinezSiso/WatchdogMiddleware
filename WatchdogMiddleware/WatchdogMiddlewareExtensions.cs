@@ -4,19 +4,23 @@ using WatchdogMiddleware.Models;
 public static class WatchdogMiddlewareExtensions
 {
     /// <summary>
-    /// Use WatchdogMiddleware to log requests and responses to InfluxDB 🐕
+    /// Enables the WatchdogMiddleware in the application pipeline.
+    /// 🐕 Logs incoming requests and outgoing responses to InfluxDB for monitoring.
+    /// 
+    /// Usage:
+    /// - Call this method in the `Configure` method of Startup.cs.
+    /// - Optionally, pass a lambda to configure WatchdogOptions (e.g., API name, logging settings, etc.).
+    /// 
+    /// Example:
+    /// app.UseWatchdogMiddleware(options => {
+    ///     options.ApiName = "MyAPI";
+    ///     options.ActivateLogs = true;
+    /// });
     /// </summary>
-    /// <param name="apiName">Identifying name of the API</param>
-    /// <param name="influxDbUrl">URL of the InfluxDB server</param>
-    /// <param name="influxDbToken">Token for InfluxDB authentication</param>
-    /// <param name="influxDbOrg">Organization name in InfluxDB</param>
-    /// <param name="influxDbBucket">Bucket name in InfluxDB</param>
-    /// <param name="dataTable">Name of the table to write data to in InfluxDB</param>
-    /// <param name="activateLogs">Activate logs to console (defatult: true)</param>
-    /// <param name="sensitiveRoutes">Sensitive routes that should not be logged</param>
-    /// <returns></returns>
-    public static IApplicationBuilder UseWatchdogMiddleware(this IApplicationBuilder builder, string apiName, string influxDbUrl, string influxDbToken, string influxDbOrg, string influxDbBucket, string dataTable, bool activateLogs = true, List<SensitiveRoute> sensitiveRoutes = null)
+    public static IApplicationBuilder UseWatchdogMiddleware(this IApplicationBuilder builder, Action<WatchdogOptions> configureOptions = null)
     {
-        return builder.UseMiddleware<WatchdogMiddleware.WatchdogMiddleware>(apiName, influxDbUrl, influxDbToken, influxDbOrg, influxDbBucket, dataTable, activateLogs, sensitiveRoutes);
+        var options = new WatchdogOptions();
+        configureOptions?.Invoke(options);
+        return builder.UseMiddleware<WatchdogMiddleware.WatchdogMiddleware>(options);
     }
 }

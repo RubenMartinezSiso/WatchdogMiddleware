@@ -1,12 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using System;
-using System.IO;
-using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 using InfluxDB.Client;
 using InfluxDB.Client.Api.Domain;
 using InfluxDB.Client.Writes;
@@ -19,31 +14,16 @@ namespace WatchdogMiddleware
 {
     public class WatchdogMiddleware
     {
-        private readonly string _apiName;
-        private readonly string _influxDbUrl;
-        private readonly string _influxDbToken;
-        private readonly string _influxDbOrg;
-        private readonly string _influxDbBucket;
-        private readonly string _dataTable;
-        private readonly List<SensitiveRoute> _sensitiveRoutes;
-        private readonly bool _activateLogs;
-
-        private readonly HttpClient _httpClient;
+        private readonly WatchdogOptions _options;
         private readonly RequestDelegate _next;
         private readonly ILogger<WatchdogMiddleware> _logger;
+        private readonly HttpClient _httpClient;
 
-        public WatchdogMiddleware(RequestDelegate next, ILogger<WatchdogMiddleware> logger, string apiName, string influxDbUrl, string influxDbToken, string influxDbOrg, string influxDbBucket, string dataTable, bool activateLogs, List<SensitiveRoute> sensitiveRoutes)
+        public WatchdogMiddleware(RequestDelegate next, ILogger<WatchdogMiddleware> logger, WatchdogOptions options)
         {
             _next = next ?? throw new ArgumentNullException(nameof(next));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            _apiName = apiName ?? "Unknown API";
-            _influxDbUrl = influxDbUrl ?? throw new ArgumentNullException(nameof(influxDbUrl));
-            _influxDbToken = influxDbToken ?? throw new ArgumentNullException(nameof(influxDbToken));
-            _influxDbOrg = influxDbOrg ?? throw new ArgumentNullException(nameof(influxDbOrg));
-            _influxDbBucket = influxDbBucket ?? throw new ArgumentNullException(nameof(influxDbBucket));
-            _dataTable = dataTable ?? throw new ArgumentNullException(nameof(dataTable));
-            _activateLogs = activateLogs;
-            _sensitiveRoutes = sensitiveRoutes ?? new List<SensitiveRoute>();
+            _options = options ?? new WatchdogOptions();
             _httpClient = new HttpClient();
         }
 
@@ -56,7 +36,7 @@ namespace WatchdogMiddleware
 
             var path = context.Request.Path.Value;
             var method = context.Request.Method.ToUpper();
-            var sensitiveRoute = _sensitiveRoutes.FirstOrDefault(r => r.Path == path && r.Method.ToUpper() == method);
+            var sensitiveRoute = _options.SensitiveRoutes.FirstOrDefault(r => r.Path == path && r.Method.ToUpper() == method);
 
             if (sensitiveRoute != null && sensitiveRoute.DoNotLog)
             {
@@ -64,7 +44,7 @@ namespace WatchdogMiddleware
                 return;
             }
 
-            if (_activateLogs)
+            if (_options.ActivateLogs)
             {
                 _logger.LogInformation("WatchdogMiddleware: Starting request processing");
             }
@@ -102,13 +82,13 @@ namespace WatchdogMiddleware
             }
             catch (Exception ex)
             {
-                if (_activateLogs)
+                if (_options.ActivateLogs)
                 {
                     _logger.LogError(ex, "WatchdogMiddleware: An error occurred during request processing");
                 }
             }
 
-            if (_activateLogs)
+            if (_options.ActivateLogs)
             {
                 _logger.LogInformation("WatchdogMiddleware: Finished request processing");
             }
@@ -127,7 +107,7 @@ namespace WatchdogMiddleware
             }
             catch (Exception ex)
             {
-                if (_activateLogs)
+                if (_options.ActivateLogs)
                 {
                     _logger.LogError(ex, "WatchdogMiddleware: Error encrypting body");
                 }
@@ -149,7 +129,7 @@ namespace WatchdogMiddleware
                 return new InterceptedRequest
                 {
                     Timestamp = DateTime.UtcNow,
-                    ApiName = _apiName,
+                    ApiName = _options.ApiName,
                     Method = context.Request.Method,
                     Path = context.Request.Path,
                     QueryString = context.Request.QueryString.ToString(),
@@ -166,7 +146,7 @@ namespace WatchdogMiddleware
             }
             catch (Exception ex)
             {
-                if (_activateLogs)
+                if (_options.ActivateLogs)
                 {
                     _logger.LogError(ex, "WatchdogMiddleware: Error logging request");
                 }
@@ -189,7 +169,7 @@ namespace WatchdogMiddleware
             }
             catch (Exception ex)
             {
-                if (_activateLogs)
+                if (_options.ActivateLogs)
                 {
                     _logger.LogError(ex, "WatchdogMiddleware: Error logging response");
                 }
@@ -215,7 +195,7 @@ namespace WatchdogMiddleware
             }
             catch (Exception ex)
             {
-                if (_activateLogs)
+                if (_options.ActivateLogs)
                 {
                     _logger.LogError(ex, "WatchdogMiddleware: Error getting location from IP");
                 }
@@ -237,7 +217,7 @@ namespace WatchdogMiddleware
             }
             catch (Exception ex)
             {
-                if (_activateLogs)
+                if (_options.ActivateLogs)
                 {
                     _logger.LogError(ex, "WatchdogMiddleware: Error reading request body");
                 }
@@ -258,7 +238,7 @@ namespace WatchdogMiddleware
             }
             catch (Exception ex)
             {
-                if (_activateLogs)
+                if (_options.ActivateLogs)
                 {
                     _logger.LogError(ex, "WatchdogMiddleware: Error reading response body");
                 }
@@ -270,7 +250,7 @@ namespace WatchdogMiddleware
         {
             if (request == null || response == null)
             {
-                if (_activateLogs)
+                if (_options.ActivateLogs)
                 {
                     _logger.LogError("WatchdogMiddleware: Cannot write to InfluxDB, request or response is null");
                 }
@@ -279,10 +259,10 @@ namespace WatchdogMiddleware
 
             try
             {
-                using var client = InfluxDBClientFactory.Create(_influxDbUrl, _influxDbToken.ToCharArray());
+                using var client = InfluxDBClientFactory.Create(_options.InfluxDbUrl, _options.InfluxDbToken.ToCharArray());
                 var writeApi = client.GetWriteApi();
 
-                var point = PointData.Measurement(_dataTable)
+                var point = PointData.Measurement(_options.DataTable)
                     .Timestamp(request.Timestamp, WritePrecision.Ms)
                     .Tag("req_api", request.ApiName)
                     .Tag("req_method", request.Method)
@@ -304,11 +284,11 @@ namespace WatchdogMiddleware
                     .Field("res_duration_ms", response.Duration.TotalMilliseconds)
                     .Field("res_headers", JsonConvert.SerializeObject(response.Headers));
 
-                writeApi.WritePoint(point, _influxDbBucket, _influxDbOrg);
+                writeApi.WritePoint(point, _options.InfluxDbBucket, _options.InfluxDbOrg);
             }
             catch (Exception ex)
             {
-                if (_activateLogs)
+                if (_options.ActivateLogs)
                 {
                     _logger.LogError(ex, "WatchdogMiddleware: Error writing to InfluxDB");
                 }

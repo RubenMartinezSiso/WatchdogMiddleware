@@ -18,6 +18,7 @@ services:
     volumes:
       - grafana-storage:/var/lib/grafana:rw
       - ./grafana/provisioning:/etc/grafana/provisioning
+      - ../Models:/etc/grafana/models
     depends_on:
       - influxdb
     ports:
