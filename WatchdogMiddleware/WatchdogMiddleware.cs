@@ -129,7 +129,7 @@ namespace WatchdogMiddleware
                 return new InterceptedRequest
                 {
                     Timestamp = DateTime.UtcNow,
-                    ApiName = _options.ApiName,
+                    ApiName = ExtractApiName(context),
                     Method = context.Request.Method,
                     Path = context.Request.Path,
                     QueryString = context.Request.QueryString.ToString(),
@@ -177,11 +177,33 @@ namespace WatchdogMiddleware
             }
         }
 
+        private string ExtractApiName(HttpContext context)
+        {
+            try
+            {
+                var assembly = System.Reflection.Assembly.GetEntryAssembly();
+                if (assembly != null)
+                {
+                    string assemblyName = assembly.GetName().Name;
+                    return !string.IsNullOrEmpty(assemblyName) ? assemblyName : _options.ApiName;
+                }
+            }
+            catch (Exception ex)
+            {
+                if (_options.ActivateLogs)
+                {
+                    _logger.LogError(ex, "WatchdogMiddleware: Error extracting API name from assembly");
+                }
+            }
+
+            return _options.ApiName;
+        }
+
         private async Task<(string Location, double? Latitude, double? Longitude)> GetLocationFromIp(string ip)
         {
             try
             {
-                ip = "88.4.135.170"; // Fraga, Spain
+                // ip = "88.4.135.170"; // Fraga, Spain
                 var response = await _httpClient.GetStringAsync($"http://ip-api.com/json/{ip}");
                 var json = JObject.Parse(response);
 

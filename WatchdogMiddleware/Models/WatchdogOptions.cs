@@ -1,30 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using WatchdogMiddleware.Models;
 
 namespace WatchdogMiddleware.Models
 {
-    /// <summary>
-    /// Configuration options for WatchdogMiddleware.
-    /// 🛠️ Allows customization of logging behavior and InfluxDB connection settings.
-    ///
-    /// Properties:
-    /// - **ApiName**: Name of the API being monitored (default: "Unknown API").
-    /// - **ActivateLogs**: Toggles logging functionality (default: true).
-    /// - **SensitiveRoutes**: A list of sensitive API routes to exclude from logging.
-    /// - **InfluxDbHost/Port**: Address and port of the InfluxDB instance.
-    /// - **InfluxDbToken**: Authentication token for InfluxDB.
-    /// - **InfluxDbOrg/Bucket**: Organization and bucket used for storing logs.
-    /// - **DataTable**: Name of the data table in InfluxDB.
-    /// - **InfluxDbUrl**: Complete URL for InfluxDB (auto-generated based on host/port).
-    ///
-    /// Example:
-    /// var options = new WatchdogOptions {
-    ///     ApiName = "MyAPI",
-    ///     InfluxDbBucket = "customBucket",
-    ///     ActivateLogs = false
-    /// };
-    /// </summary>
     public class WatchdogOptions
     {
         public string ApiName { get; set; } = "Unknown API";
