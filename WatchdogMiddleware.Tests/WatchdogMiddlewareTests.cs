@@ -9,146 +9,151 @@ using WatchdogMiddleware.Models;
 
 public class WatchdogMiddlewareTests
 {
-    [Fact(DisplayName = "Test 1: Basic InfluxDB Connection")]
-    public async Task TestInfluxDBConnection()
+    private readonly ILogger<WatchdogMiddleware.WatchdogMiddleware> _logger;
+
+    public WatchdogMiddlewareTests()
     {
-        // Arrange
-        var options = new WatchdogOptions
-        {
-            ApiName = "TestAPI",
-            InfluxDbUrl = "http://localhost:8086",
-            InfluxDbToken = "your_token",
-            InfluxDbOrg = "watchdogorg",
-            InfluxDbBucket = "watchdogbucket",
-            DataTable = "watchdog_test_table"
-        };
-
-        using var client = InfluxDBClientFactory.Create(options.InfluxDbUrl, options.InfluxDbToken.ToCharArray());
-
-        // Act & Assert
-        var health = await client.HealthAsync();
-        Assert.True(health.Status == InfluxDB.Client.Api.Domain.HealthCheck.StatusEnum.Pass,
-            "InfluxDB is not running or not accessible. Please ensure InfluxDB is running and accessible.");
+        _logger = Mock.Of<ILogger<WatchdogMiddleware.WatchdogMiddleware>>();
     }
 
-    [Fact(DisplayName = "Test 2: Write Test Data to InfluxDB")]
-    public async Task TestWriteToInfluxDB()
+    [Fact(DisplayName = "Test 1: InfluxDB Connection")]
+    public async Task Should_Connect_To_InfluxDB()
     {
         // Arrange
-        var options = new WatchdogOptions
-        {
-            ApiName = "TestAPI",
-            InfluxDbUrl = "http://localhost:8086",
-            InfluxDbToken = "your_token",
-            InfluxDbOrg = "watchdogorg",
-            InfluxDbBucket = "watchdogbucket",
-            DataTable = "watchdog_test_table"
-        };
-
-        using var client = InfluxDBClientFactory.Create(options.InfluxDbUrl, options.InfluxDbToken.ToCharArray());
-        var writeApi = client.GetWriteApi();
+        var options = new WatchdogOptions();
+        string InflusDbUrl = options.InfluxDbUrl;
+        using var client = InfluxDBClientFactory.Create(InflusDbUrl, options.InfluxDbToken.ToCharArray());
 
         // Act
-        var point = PointData.Measurement("watchdog_test_table")
-            .Tag("test_type", "example")
-            .Tag("req_api", "TestAPI")
-            .Field("req_path", "/api/test")
-            .Field("res_status_code", 200)
-            .Field("test_message", "This is a test entry")
-            .Timestamp(DateTime.UtcNow, WritePrecision.Ms);
+        var health = await client.HealthAsync();
 
         // Assert
-        try
-        {
-            writeApi.WritePoint(point, options.InfluxDbBucket, options.InfluxDbOrg);
-            Assert.True(true, "Test data written successfully");
-        }
-        catch (Exception ex)
-        {
-            Assert.True(false, $"Failed to write test data: {ex.Message}\n" +
-                "Please check:\n" +
-                "1. InfluxDB is running\n" +
-                "2. Token is valid\n" +
-                "3. Organization and bucket exist\n" +
-                "4. Bucket has write permissions");
-        }
+        Assert.True(health.Status == HealthCheck.StatusEnum.Pass,
+            "InfluxDB connection failed. Please check:\n" +
+            "1. InfluxDB is running on localhost:8086\n" +
+            "2. InfluxDB service is healthy");
     }
 
-    [Fact(DisplayName = "Test 3: Middleware Integration")]
-    public async Task TestMiddlewareIntegration()
+    [Fact(DisplayName = "Test 2: Basic Data Insertion")]
+    public async Task Should_Insert_Basic_Data()
     {
         // Arrange
-        var options = new WatchdogOptions
-        {
-            ApiName = "TestAPI",
-            ActivateLogs = true
-        };
-
-        var logger = new Mock<ILogger<WatchdogMiddleware.WatchdogMiddleware>>();
+        var options = new WatchdogOptions();
         var context = new DefaultHttpContext();
         context.Request.Method = "GET";
-        context.Request.Path = "/api/test";
+        context.Request.Path = "/api/test2";
+        context.Response.Body = new MemoryStream();
 
         var middleware = new WatchdogMiddleware.WatchdogMiddleware(
             next: (innerHttpContext) => Task.CompletedTask,
-            logger: logger.Object,
-            options: options
+            _logger,
+            options
         );
 
         // Act & Assert
         try
         {
             await middleware.InvokeAsync(context);
-            Assert.True(true, "Middleware processed the request successfully");
+
+            // Verify data was written
+            using var client = InfluxDBClientFactory.Create(options.InfluxDbUrl, options.InfluxDbToken.ToCharArray());
+            var query = $"from(bucket: \"{options.InfluxDbBucket}\") " +
+                       $"|> range(start: -1m) " +
+                       $"|> filter(fn: (r) => r[\"req_path\"] == \"/api/test2\")";
+
+            var tables = await client.GetQueryApi().QueryAsync(query, options.InfluxDbOrg);
+            Assert.True(tables.Count > 0, "No data was written to InfluxDB");
         }
         catch (Exception ex)
         {
-            Assert.True(false, $"Middleware failed to process request: {ex.Message}\n" +
+            Assert.Fail($"Test failed: {ex.Message}\n" +
                 "Please check:\n" +
-                "1. Middleware configuration is correct\n" +
-                "2. All required services are available\n" +
-                "3. Permissions are properly set");
+                "1. InfluxDB connection settings\n" +
+                "2. Write permissions\n" +
+                "3. Bucket exists and is accessible");
         }
     }
 
-    [Fact(DisplayName = "Test 4: Sensitive Routes")]
-    public async Task TestSensitiveRoutes()
+    [Fact(DisplayName = "Test 3: Sensitive Routes")]
+    public async Task Should_Not_Log_Sensitive_Routes()
     {
         // Arrange
         var options = new WatchdogOptions
         {
-            ApiName = "TestAPI",
             SensitiveRoutes = new List<SensitiveRoute>
             {
-                new SensitiveRoute { Path = "/api/sensitive", Method = "POST", DoNotLog = true }
+                new SensitiveRoute { Path = "/api/test3", Method = "POST", DoNotLog = true }
             }
         };
 
-        var logger = new Mock<ILogger<WatchdogMiddleware.WatchdogMiddleware>>();
         var context = new DefaultHttpContext();
         context.Request.Method = "POST";
-        context.Request.Path = "/api/sensitive";
+        context.Request.Path = "/api/test3";
+        context.Response.Body = new MemoryStream();
 
         var middleware = new WatchdogMiddleware.WatchdogMiddleware(
             next: (innerHttpContext) => Task.CompletedTask,
-            logger: logger.Object,
-            options: options
+            _logger,
+            options
         );
 
         // Act
         await middleware.InvokeAsync(context);
 
         // Assert
-        logger.Verify(
-            x => x.Log(
-                It.IsAny<LogLevel>(),
-                It.IsAny<EventId>(),
-                It.Is<It.IsAnyType>((v, t) => true),
-                It.IsAny<Exception>(),
-                It.Is<Func<It.IsAnyType, Exception, string>>((v, t) => true)
-            ),
-            Times.Never,
-            "Sensitive route should not be logged"
+        using var client = InfluxDBClientFactory.Create(options.InfluxDbUrl, options.InfluxDbToken.ToCharArray());
+        var query = $"from(bucket: \"{options.InfluxDbBucket}\") " +
+                   $"|> range(start: -1m) " +
+                   $"|> filter(fn: (r) => r[\"req_path\"] == \"/api/test3\")";
+
+        var tables = await client.GetQueryApi().QueryAsync(query, options.InfluxDbOrg);
+        Assert.True(tables.Count == 0, "Sensitive route was logged when it should not have been");
+    }
+
+    [Fact(DisplayName = "Test 4: Custom Configuration")]
+    public async Task Should_Use_Custom_Configuration()
+    {
+        // Arrange
+        var options = new WatchdogOptions
+        {
+            // Add more custom configurations here (test is going to fail if it is not valid)
+            ApiName = "CustomTestAPI",
+            InfluxDbBucket = "custom_bucket",
+            DataTable = "custom_table",
+            ActivateLogs = true
+        };
+
+        var context = new DefaultHttpContext();
+        context.Request.Method = "GET";
+        context.Request.Path = "/api/test4";
+        context.Response.Body = new MemoryStream();
+
+        var middleware = new WatchdogMiddleware.WatchdogMiddleware(
+            next: (innerHttpContext) => Task.CompletedTask,
+            _logger,
+            options
         );
+
+        // Act & Assert
+        try
+        {
+            await middleware.InvokeAsync(context);
+
+            using var client = InfluxDBClientFactory.Create(options.InfluxDbUrl, options.InfluxDbToken.ToCharArray());
+            var query = $"from(bucket: \"{options.InfluxDbBucket}\") " +
+                       $"|> range(start: -1m) " +
+                       $"|> filter(fn: (r) => r[\"req_path\"] == \"/api/test4\")";
+
+            var tables = await client.GetQueryApi().QueryAsync(query, options.InfluxDbOrg);
+            Assert.True(tables.Count > 0, "Custom configuration data was not written to InfluxDB");
+        }
+        catch (Exception ex)
+        {
+            Assert.Fail($"Test failed: {ex.Message}\n" +
+                "Please check:\n" +
+                "1. Custom bucket exists\n" +
+                "2. Write permissions for custom bucket\n" +
+                "3. Custom configuration is valid");
+        }
     }
 }

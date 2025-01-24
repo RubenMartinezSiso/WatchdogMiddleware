@@ -1,61 +1,48 @@
 # WatchdogMiddleware Tests
 
-This project contains integration tests for the WatchdogMiddleware. These tests verify the middleware's functionality and help identify common issues.
+Integration tests for WatchdogMiddleware that verify the middleware's functionality with InfluxDB.
 
 ## Prerequisites
 
-Before running the tests, ensure:
-
-1. InfluxDB is running and accessible
-2. The following environment is properly configured:
-   - InfluxDB URL (default: http://localhost:8086)
-   - InfluxDB Token
-   - Organization name
-   - Bucket name
-
-## Running the Tests
-
-1. Open the solution in Visual Studio
-2. Right-click on the WatchdogMiddleware.Tests project
-3. Select "Run Tests"
+Before running tests:
+1. InfluxDB must be running on localhost:8086
+2. Default bucket and organization must exist
+3. Token must have write permissions
 
 ## Test Cases
 
-### Test 1: Basic InfluxDB Connection
-Verifies that InfluxDB is accessible and properly configured.
+### 1. InfluxDB Connection
+Verifies basic connectivity to InfluxDB service.
+- Checks if InfluxDB is running and healthy
+- Uses default connection settings
 
-### Test 2: Write Test Data
-Attempts to write test data to InfluxDB to verify write permissions and configuration.
+### 2. Basic Data Insertion
+Tests basic middleware functionality with default settings.
+- Simulates HTTP request/response
+- Verifies data is actually written to InfluxDB
+- Uses default WatchdogOptions
 
-### Test 3: Middleware Integration
-Tests the basic middleware functionality with a mock HTTP context.
+### 3. Sensitive Routes
+Validates sensitive route handling.
+- Configures a sensitive route
+- Verifies sensitive data is not logged
+- Checks InfluxDB for absence of sensitive data
 
-### Test 4: Sensitive Routes
-Verifies that sensitive routes are properly handled and not logged.
+### 4. Custom Configuration
+Tests middleware with custom settings.
+- Uses custom API name, bucket, and table
+- Verifies custom configuration is respected
+- Confirms data is written with custom parameters
 
-## Troubleshooting
+## Error Handling
 
-If tests fail, check:
+Tests will fail if:
+- InfluxDB is not accessible
+- Data writing fails
+- Configuration is invalid
+- Permissions are insufficient
 
-1. InfluxDB Connection:
-   - Is InfluxDB running?
-   - Is the URL correct?
-   - Is the token valid?
+Each test includes detailed error messages to help identify and fix issues.
 
-2. Permissions:
-   - Does the token have write permissions?
-   - Does the bucket exist?
-   - Is the organization name correct?
+## Running Tests
 
-3. Configuration:
-   - Are all environment variables set?
-   - Is the middleware properly configured?
-
-## Test Data
-
-All test data is clearly marked with:
-- Measurement name: "watchdog_test_table"
-- Tag "test_type": "example"
-- Descriptive test messages
-
-This ensures test data can be easily identified and separated from production data.
