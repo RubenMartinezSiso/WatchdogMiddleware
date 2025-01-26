@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Caching.Memory;
 using System.Net;
 using System.Text;
 using InfluxDB.Client;
@@ -17,14 +18,35 @@ namespace WatchdogMiddleware
         private readonly WatchdogOptions _options;
         private readonly RequestDelegate _next;
         private readonly ILogger<WatchdogMiddleware> _logger;
-        private readonly HttpClient _httpClient;
+
+        private static readonly MemoryCache _locationCache = new(new MemoryCacheOptions { SizeLimit = 1000 });
+        private static readonly HttpClient _httpClient;
+        private static DateTime _lastErrorTime = DateTime.MinValue;
+        private static int _consecutiveErrors = 0;
+        private const int ERROR_THRESHOLD = 10;
+        private const int ERROR_TIMEOUT_SECONDS = 15;
+        private const int LIMIT_TIMEOUT_MILISECONDS = 500;
+
+        static WatchdogMiddleware()
+        {
+            var handler = new SocketsHttpHandler
+            {
+                MaxConnectionsPerServer = 20,
+                PooledConnectionLifetime = TimeSpan.FromMinutes(5),
+                PooledConnectionIdleTimeout = TimeSpan.FromMinutes(2)
+            };
+
+            _httpClient = new HttpClient(handler)
+            {
+                Timeout = TimeSpan.FromMilliseconds(LIMIT_TIMEOUT_MILISECONDS)
+            };
+        }
 
         public WatchdogMiddleware(RequestDelegate next, ILogger<WatchdogMiddleware> logger, WatchdogOptions options)
         {
             _next = next ?? throw new ArgumentNullException(nameof(next));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _options = options ?? new WatchdogOptions();
-            _httpClient = new HttpClient();
         }
 
         public async Task InvokeAsync(HttpContext context)
@@ -201,22 +223,43 @@ namespace WatchdogMiddleware
 
         private async Task<(string Location, double? Latitude, double? Longitude)> GetLocationFromIp(string ip)
         {
+            ip = "88.4.132.1"; // For testing purposes
+            if (string.IsNullOrEmpty(ip))
+                return ("Unknown Location", null, null);
+
+            if (_consecutiveErrors >= ERROR_THRESHOLD ||
+                (DateTime.UtcNow - _lastErrorTime).TotalSeconds < ERROR_TIMEOUT_SECONDS)
+            {
+                return ("Unknown Location", null, null);
+            }
+
+            if (_locationCache.TryGetValue(ip, out (string, double?, double?) cachedLocation))
+                return cachedLocation;
+
             try
             {
-                // ip = "88.4.135.170"; // Fraga, Spain
-                var response = await _httpClient.GetStringAsync($"http://ip-api.com/json/{ip}");
+                using var cts = new CancellationTokenSource(TimeSpan.FromMilliseconds(LIMIT_TIMEOUT_MILISECONDS));
+                var response = await _httpClient.GetStringAsync($"http://ip-api.com/json/{ip}", cts.Token);
+
                 var json = JObject.Parse(response);
-
-                var location = $"{json["city"]}, {json["regionName"]}, {json["country"]}";
-
-                return (
-                    location,
-                    json["lat"]?.Value<double>(),
-                    json["lon"]?.Value<double>()
+                var location = ($"{json["city"]}, {json["regionName"]}, {json["country"]}", json["lat"]?.Value<double>(), json["lon"]?.Value<double>()
                 );
+
+                var cacheEntryOptions = new MemoryCacheEntryOptions()
+                    .SetSize(1)
+                    .SetAbsoluteExpiration(TimeSpan.FromHours(24));
+                _locationCache.Set(ip, location, cacheEntryOptions);
+
+                _consecutiveErrors = 0;
+                _lastErrorTime = DateTime.MinValue;
+
+                return location;
             }
             catch (Exception ex)
             {
+                _consecutiveErrors++;
+                _lastErrorTime = DateTime.UtcNow;
+
                 if (_options.ActivateLogs)
                 {
                     _logger.LogError(ex, "WatchdogMiddleware: Error getting location from IP");
