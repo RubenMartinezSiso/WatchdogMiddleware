@@ -44,8 +44,6 @@ for var in dashboard.get('templating', {}).get('list', []):
     if var.get('name') == 'dataTable':
         var['current']['text'] = datatable
         var['current']['value'] = datatable
-        var['options'][0]['text'] = datatable
-        var['options'][0]['value'] = datatable
         var['query'] = datatable
 
 with open(dashboard_path, 'w') as file:

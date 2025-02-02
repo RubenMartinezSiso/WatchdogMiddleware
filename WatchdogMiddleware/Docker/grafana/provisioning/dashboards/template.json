@@ -34,8 +34,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
-        "w": 18,
+        "h": 6,
+        "w": 24,
         "x": 0,
         "y": 0
       },
@@ -46,7 +46,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "<div style=\"display: flex; align-items: center; background: #9B68A7; border: 4px solid #7A4A7C; border-radius: 20px; padding: 10px 40px; text-align: left; font-family: Arial, sans-serif; color: #ffffff; max-width: 100%; margin: 20px auto; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);\">\r\n    <div style=\"flex-grow: 1;\">\r\n        <h1 style=\"font-size: 3.5em; margin-top: 10px; margin-bottom: 10px; font-weight: bold;\">Watchdog Middleware \ud83d\udc15</h1>\r\n    </div>\r\n</div>",
+        "content": "<div style=\"\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    background: linear-gradient(135deg, #9B68A7 0%, #7A4A7C 100%);\r\n    border: 4px solid rgba(255, 255, 255, 0.1);\r\n    border-radius: 25px;\r\n    padding: 30px 50px;\r\n    font-family: Arial, sans-serif;\r\n    color: #ffffff;\r\n    max-width: 100%;\r\n    margin: 30px auto;\r\n    box-shadow: \r\n        0 10px 20px rgba(0, 0, 0, 0.2),\r\n        inset 0 2px 10px rgba(255, 255, 255, 0.1);\r\n\">\r\n    <div style=\"flex-grow: 1;\">\r\n        <h1 style=\"\r\n            font-size: 4.2em;\r\n            margin: 10px 0;\r\n            font-weight: 800;\r\n            letter-spacing: -1px;\r\n            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);\r\n        \">Watchdog Middleware <span style=\"font-size: 0.9em;\">\ud83d\udc36</span></h1>\r\n    </div>\r\n    <div style=\"\r\n        display: flex;\r\n        flex-direction: column;\r\n        align-items: flex-start;\r\n        margin-left: 40px;\r\n    \">\r\n        <p style=\"font-size: 1.3em; margin: 5px 0; font-weight: bold;\">By Rub\u00e9n Mart\u00ednez</p>\r\n        <a href=\"https://github.com/RubenMartinezSiso\" \r\n           target=\"_blank\" \r\n           style=\"text-decoration: none; display: inline-flex; align-items: center; background-color: #9B68A7; color: #ffffff; padding: 8px 20px; border-radius: 10px; font-weight: bold; font-size: 1.2em; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);\">\r\n            <span style=\"margin-right: 8px;\">\ud83d\ude80</span> Visit my GitHub\r\n        </a>\r\n    </div>\r\n</div>\r\n",
         "mode": "markdown"
       },
       "pluginVersion": "11.4.0",
@@ -55,1463 +55,1768 @@
       "type": "text"
     },
     {
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
+      "collapsed": true,
       "gridPos": {
-        "h": 4,
-        "w": 6,
-        "x": 18,
-        "y": 0
-      },
-      "id": 43,
-      "options": {
-        "code": {
-          "language": "plaintext",
-          "showLineNumbers": false,
-          "showMiniMap": false
-        },
-        "content": "<div style=\"display: flex; flex-direction: column; align-items: flex-start; background: #9B68A7; border: 4px solid #7A4A7C; border-radius: 20px; padding: 10px 30px; text-align: left; font-family: Arial, sans-serif; color: #ffffff; max-width: 100%; margin: 10px auto; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);\">\n    <p style=\"font-size: 1.3em; margin-top: 5px; margin-bottom: 5px; font-weight: bold;\">By Rub\u00e9n Mart\u00ednez</p>\n    <a href=\"https://github.com/RubenMartinezSiso\" target=\"_blank\" style=\"text-decoration: none; display: inline-flex; align-items: center; background-color: #7A4A7C; color: #ffffff; padding: 8px 20px; border-radius: 10px; font-weight: bold; font-size: 1.2em; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);\">\n        <span style=\"margin-right: 8px;\">\ud83d\ude80</span> Visit my GitHub\n    </a>\n</div>\n",
-        "mode": "markdown"
-      },
-      "pluginVersion": "11.4.0",
-      "title": "",
-      "transparent": true,
-      "type": "text"
-    },
-    {
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 2,
+        "h": 1,
         "w": 24,
         "x": 0,
-        "y": 4
+        "y": 6
       },
-      "id": 23,
-      "options": {
-        "code": {
-          "language": "plaintext",
-          "showLineNumbers": false,
-          "showMiniMap": false
+      "id": 51,
+      "panels": [
+        {
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 2,
+            "w": 4,
+            "x": 0,
+            "y": 7
+          },
+          "id": 48,
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
+            },
+            "content": "<div style=\"text-align: left; width: 100%;\">\r\n    <hr style=\"border: 1px solid white; margin-top: 5px; margin-bottom: 10px;\">\r\n    <h2 style=\"font-weight: bold; font-size: 1.8em; margin-top: 0; margin-bottom: 5px;\">Status</h2>\r\n</div>\r\n",
+            "mode": "html"
+          },
+          "pluginVersion": "11.4.0",
+          "title": "",
+          "transparent": true,
+          "type": "text"
         },
-        "content": "<div style=\"text-align: left; width: 100%;\">\r\n    <hr style=\"border: 1px solid white; margin-top: 5px; margin-bottom: 10px;\">\r\n    <h2 style=\"font-weight: bold; font-size: 1.8em; margin-top: 0; margin-bottom: 5px;\">Last Requests</h2>\r\n</div>\r\n",
-        "mode": "html"
-      },
-      "pluginVersion": "11.4.0",
-      "title": "",
-      "transparent": true,
-      "type": "text"
-    },
-    {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "influx_ql_uid"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
+        {
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
           },
-          "custom": {
-            "align": "left",
-            "cellOptions": {
-              "type": "auto"
+          "gridPos": {
+            "h": 2,
+            "w": 20,
+            "x": 4,
+            "y": 7
+          },
+          "id": 49,
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
             },
-            "filterable": true,
-            "inspect": false
+            "content": "<div style=\"text-align: left; width: 100%;\">\r\n    <hr style=\"border: 1px solid white; margin-top: 5px; margin-bottom: 10px;\">\r\n    <h2 style=\"font-weight: bold; font-size: 1.8em; margin-top: 0; margin-bottom: 5px;\">Response Time</h2>\r\n</div>\r\n",
+            "mode": "html"
           },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "transparent",
-                "value": null
-              }
-            ]
-          }
+          "pluginVersion": "11.4.0",
+          "title": "",
+          "transparent": true,
+          "type": "text"
         },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Method"
-            },
-            "properties": [
-              {
-                "id": "custom.cellOptions",
-                "value": {
-                  "applyToRow": true,
-                  "mode": "gradient",
-                  "type": "color-background",
-                  "wrapText": false
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus_uid"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [
+                {
+                  "options": {
+                    "0": {
+                      "color": "red",
+                      "index": 1,
+                      "text": "DOWN"
+                    },
+                    "1": {
+                      "color": "green",
+                      "index": 0,
+                      "text": "UP"
+                    }
+                  },
+                  "type": "value"
                 }
-              },
-              {
-                "id": "mappings",
-                "value": [
+              ],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
                   {
-                    "options": {
-                      "DELETE": {
-                        "color": "#f2495cb3",
-                        "index": 3
-                      },
-                      "GET": {
-                        "color": "#5795f2cc",
-                        "index": 0
-                      },
-                      "POST": {
-                        "color": "#73bf69cc",
-                        "index": 1
-                      },
-                      "PUT": {
-                        "color": "#ff9830b3",
-                        "index": 2
-                      }
-                    },
-                    "type": "value"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Hiden Timestamp"
-            },
-            "properties": [
-              {
-                "id": "custom.hidden",
-                "value": true
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Show details"
-            },
-            "properties": [
-              {
-                "id": "mappings",
-                "value": [
-                  {
-                    "options": {
-                      "pattern": ".*",
-                      "result": {
-                        "index": 0,
-                        "text": "Show details"
-                      }
-                    },
-                    "type": "regex"
-                  }
-                ]
-              },
-              {
-                "id": "links",
-                "value": [
-                  {
-                    "title": "Show Details",
-                    "url": "/d/ee3qdl3l90zcwc/watchdog-middleware-techtiva?&var-detailsQuery=${__data.fields[\"Hiden Timestamp\"]}\n\r\n\r"
-                  }
-                ]
-              },
-              {
-                "id": "custom.filterable",
-                "value": false
-              },
-              {
-                "id": "custom.cellOptions",
-                "value": {
-                  "type": "color-text",
-                  "wrapText": false
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Status"
-            },
-            "properties": [
-              {
-                "id": "mappings",
-                "value": [
-                  {
-                    "options": {
-                      "from": 0,
-                      "result": {
-                        "index": 0,
-                        "text": "\u2705"
-                      },
-                      "to": 399
-                    },
-                    "type": "range"
+                    "color": "green"
                   },
                   {
-                    "options": {
-                      "from": 400,
-                      "result": {
-                        "index": 1,
-                        "text": "\u26a0\ufe0f"
-                      },
-                      "to": 600
-                    },
-                    "type": "range"
+                    "color": "red",
+                    "value": 80
                   }
                 ]
               }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 11,
-        "w": 16,
-        "x": 0,
-        "y": 6
-      },
-      "id": 26,
-      "options": {
-        "cellHeight": "sm",
-        "footer": {
-          "countRows": false,
-          "fields": "",
-          "reducer": [
-            "sum"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 4,
+            "x": 0,
+            "y": 9
+          },
+          "id": 45,
+          "options": {
+            "colorMode": "value",
+            "graphMode": "area",
+            "justifyMode": "auto",
+            "orientation": "auto",
+            "percentChangeColorMode": "standard",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "showPercentChange": false,
+            "textMode": "auto",
+            "wideLayout": true
+          },
+          "pluginVersion": "11.4.0",
+          "repeat": "apiStatus",
+          "repeatDirection": "v",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus_uid"
+              },
+              "disableTextWrap": false,
+              "editorMode": "code",
+              "expr": "probe_success{instance=\"$apiStatus\"}",
+              "fullMetaSearch": false,
+              "includeNullMetadata": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "A",
+              "useBackend": false
+            }
           ],
-          "show": false
+          "title": "\ud83c\udf10 $apiStatus",
+          "type": "stat"
         },
-        "showHeader": true,
-        "sortBy": []
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus_uid"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "purple",
+                "mode": "fixed"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 19,
+                "gradientMode": "hue",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 20,
+            "x": 4,
+            "y": 9
+          },
+          "id": 46,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "tooltip": {
+              "mode": "none",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "11.4.0",
+          "repeat": "apiStatus",
+          "repeatDirection": "v",
+          "targets": [
+            {
+              "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus_uid"
+              },
+              "disableTextWrap": false,
+              "editorMode": "builder",
+              "expr": "probe_duration_seconds{instance=\"$apiStatus\"}",
+              "fullMetaSearch": false,
+              "hide": false,
+              "includeNullMetadata": true,
+              "instant": false,
+              "legendFormat": "__auto",
+              "range": true,
+              "refId": "A",
+              "useBackend": false
+            }
+          ],
+          "title": "\ud83c\udf10 $apiStatus",
+          "type": "timeseries"
+        }
+      ],
+      "title": "\ud83d\ude80 API Status Overview",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 7
       },
-      "pluginVersion": "11.4.0",
-      "targets": [
+      "id": 50,
+      "panels": [
+        {
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 2,
+            "w": 24,
+            "x": 0,
+            "y": 102
+          },
+          "id": 23,
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
+            },
+            "content": "<div style=\"text-align: left; width: 100%;\">\r\n    <hr style=\"border: 1px solid white; margin-top: 5px; margin-bottom: 10px;\">\r\n    <h2 style=\"font-weight: bold; font-size: 1.8em; margin-top: 0; margin-bottom: 5px;\">Last Requests</h2>\r\n</div>\r\n",
+            "mode": "html"
+          },
+          "pluginVersion": "11.4.0",
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        },
         {
           "datasource": {
             "type": "influxdb",
             "uid": "influx_ql_uid"
           },
-          "hide": false,
-          "query": "SELECT\n    time,\n    req_timestamp AS \"Hiden Timestamp\", \n    req_timestamp AS \"Show details\", \n    req_api AS \"API\", \n    req_path AS \"Path\", \n    req_method AS \"Method\", \n    req_route_controller AS \"Controller\", \n    req_route_action AS \"Action\", \n    res_status_code AS \"Status\"\nFROM $dataTable\nWHERE $timeFilter AND req_api =~ /^($api)$/\nORDER BY time DESC\n",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "table"
-        }
-      ],
-      "title": "Requests",
-      "transformations": [
-        {
-          "id": "organize",
-          "options": {
-            "excludeByName": {
-              "API": false,
-              "Hiden Timestamp": false,
-              "Time": false
-            },
-            "includeByName": {},
-            "indexByName": {
-              "API": 3,
-              "Action": 7,
-              "Controller": 6,
-              "Hiden Timestamp": 2,
-              "Method": 5,
-              "Path": 4,
-              "Show details": 0,
-              "Status": 8,
-              "Time": 1
-            },
-            "renameByName": {
-              "Time": "Date"
-            }
-          }
-        }
-      ],
-      "type": "table"
-    },
-    {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "influx_flux_uid"
-      },
-      "description": "Click on 'Show details' in the table on the left to explore the data.",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "align": "left",
-            "cellOptions": {
-              "type": "auto"
-            },
-            "filterable": false,
-            "inspect": false
-          },
-          "mappings": [],
-          "noValue": "Click on 'Show details' in the table on the left to explore the data.",
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "#ffffff",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Value"
-            },
-            "properties": [
-              {
-                "id": "custom.inspect",
-                "value": true
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
               },
-              {
-                "id": "custom.cellOptions",
-                "value": {
-                  "type": "json-view"
-                }
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Field"
-            },
-            "properties": [
-              {
-                "id": "custom.cellOptions",
-                "value": {
-                  "type": "color-text",
-                  "wrapText": false
-                }
+              "custom": {
+                "align": "left",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "filterable": true,
+                "inspect": false
               },
-              {
-                "id": "custom.width",
-                "value": 169
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Order"
-            },
-            "properties": [
-              {
-                "id": "custom.hidden",
-                "value": true
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 11,
-        "w": 8,
-        "x": 16,
-        "y": 6
-      },
-      "id": 38,
-      "options": {
-        "cellHeight": "sm",
-        "footer": {
-          "countRows": false,
-          "fields": "",
-          "reducer": [
-            "sum"
-          ],
-          "show": false
-        },
-        "frameIndex": 0,
-        "showHeader": true,
-        "sortBy": []
-      },
-      "pluginVersion": "11.4.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "influx_flux_uid"
-          },
-          "hide": false,
-          "query": "data = from(bucket: \"watchdogbucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"$dataTable\")\n  |> filter(fn: (r) => contains(value: r.req_api, set: ${api:json}))\n  |> filter(fn: (r) => r[\"_field\"] == \"req_timestamp\"\n        or r[\"_field\"] == \"req_query_string\"\n        or r[\"_field\"] == \"req_body\"\n        or r[\"_field\"] == \"req_host\"\n        or r[\"_field\"] == \"req_client_ip\"\n        or r[\"_field\"] == \"req_location\"\n        or r[\"_field\"] == \"req_headers\"\n        or r[\"_field\"] == \"res_timestamp\"\n        or r[\"_field\"] == \"res_status_code\"\n        or r[\"_field\"] == \"res_body\"\n        or r[\"_field\"] == \"res_duration_ms\"\n        or r[\"_field\"] == \"res_headers\"\n        ) \n  |> pivot(rowKey:[\"_time\"], columnKey: [\"_field\"], valueColumn: \"_value\") \n  |> filter(fn: (r) => r.req_timestamp == \"$detailsQuery\")\n  |> limit(n: 1)\n\ndata\n  |> map(fn: (r) => ({\n      Order: 1,\n      Field: \"Timestamp\",\n      Value: string(v: r.req_timestamp)\n  }))\n  |> yield(name: \"1_timestamp\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 2,\n      Field: \"API\",\n      Value: string(v: r.req_api)\n  }))\n  |> yield(name: \"2_api\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 3,\n      Field: \"Path\",\n      Value: string(v: r.req_path)\n  }))\n  |> yield(name: \"3_path\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 4,\n      Field: \"Method\",\n      Value: string(v: r.req_method)\n  }))\n  |> yield(name: \"4_method\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 5,\n      Field: \"Controller\",\n      Value: string(v: r.req_route_controller)\n  }))\n  |> yield(name: \"5_controller\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 6,\n      Field: \"Action\",\n      Value: string(v: r.req_route_action)\n  }))\n  |> yield(name: \"6_action\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 7,\n      Field: \"Query String\",\n      Value: string(v: r.req_query_string)\n  }))\n  |> yield(name: \"7_query_string\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 8,\n      Field: \"Body\",\n      Value: string(v: r.req_body)\n  }))\n  |> yield(name: \"8_body\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 9,\n      Field: \"Request Host\",\n      Value: string(v: r.req_host)\n  }))\n  |> yield(name: \"9_req_host\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 10,\n      Field: \"Request IP\",\n      Value: string(v: r.req_client_ip)\n  }))\n  |> yield(name: \"10_req_ip\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 11,\n      Field: \"Request Location\",\n      Value: string(v: r.req_location)\n  }))\n  |> yield(name: \"11_req_location\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 12,\n      Field: \"Request Headers\",\n      Value: string(v: r.req_headers)\n  }))\n  |> yield(name: \"12_req_headers\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 13,\n      Field: \"Response Timestamp\",\n      Value: string(v: r.res_timestamp)\n  }))\n  |> yield(name: \"13_res_timestamp\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 14,\n      Field: \"Response Code\",\n      Value: string(v: r.res_status_code)\n  }))\n  |> yield(name: \"14_res_status_code\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 15,\n      Field: \"Response Body\",\n      Value: string(v: r.res_body)\n  }))\n  |> yield(name: \"15_res_body\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 16,\n      Field: \"Response Time (ms)\",\n      Value: string(v: r.res_duration_ms)\n  }))\n  |> yield(name: \"16_res_duration_ms\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 17,\n      Field: \"Response Headers\",\n      Value: string(v: r.res_headers)\n  }))\n  |> yield(name: \"17_res_headers\")",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "table"
-        }
-      ],
-      "title": "Request Details",
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "sortBy",
-          "options": {
-            "fields": {},
-            "sort": [
-              {
-                "field": "Order"
-              }
-            ]
-          }
-        }
-      ],
-      "type": "table"
-    },
-    {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "influx_ql_uid"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "align": "left",
-            "cellOptions": {
-              "applyToRow": false,
-              "mode": "basic",
-              "type": "color-background",
-              "wrapText": false
-            },
-            "filterable": true,
-            "inspect": false
-          },
-          "mappings": [],
-          "noValue": "No errors reported",
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "#f2495c66",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Response Body"
-            },
-            "properties": [
-              {
-                "id": "custom.inspect",
-                "value": true
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Show details"
-            },
-            "properties": [
-              {
-                "id": "mappings",
-                "value": [
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
                   {
-                    "options": {
-                      "pattern": ".*",
-                      "result": {
-                        "index": 0,
-                        "text": "Show details"
+                    "color": "transparent"
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Method"
+                },
+                "properties": [
+                  {
+                    "id": "custom.cellOptions",
+                    "value": {
+                      "applyToRow": true,
+                      "mode": "gradient",
+                      "type": "color-background",
+                      "wrapText": false
+                    }
+                  },
+                  {
+                    "id": "mappings",
+                    "value": [
+                      {
+                        "options": {
+                          "DELETE": {
+                            "color": "#f2495cb3",
+                            "index": 3
+                          },
+                          "GET": {
+                            "color": "#5795f2cc",
+                            "index": 0
+                          },
+                          "POST": {
+                            "color": "#73bf69cc",
+                            "index": 1
+                          },
+                          "PUT": {
+                            "color": "#ff9830b3",
+                            "index": 2
+                          }
+                        },
+                        "type": "value"
                       }
-                    },
-                    "type": "regex"
+                    ]
                   }
                 ]
               },
               {
-                "id": "custom.filterable"
-              },
-              {
-                "id": "links",
-                "value": [
+                "matcher": {
+                  "id": "byName",
+                  "options": "Hiden Timestamp"
+                },
+                "properties": [
                   {
-                    "title": "Show details",
-                    "url": "/d/ee3qdl3l90zcwc/watchdog-middleware-techtiva?&var-detailsQuery=${__data.fields[\"Hiden Timestamp\"]}\n\r\n\r"
+                    "id": "custom.hidden",
+                    "value": true
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Show details"
+                },
+                "properties": [
+                  {
+                    "id": "mappings",
+                    "value": [
+                      {
+                        "options": {
+                          "pattern": ".*",
+                          "result": {
+                            "index": 0,
+                            "text": "Show details"
+                          }
+                        },
+                        "type": "regex"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "links",
+                    "value": [
+                      {
+                        "targetBlank": true,
+                        "title": "Show Details",
+                        "url": "/d/ee3qdl3l90zcwc/watchdog-middleware-techtiva?&var-detailsQuery=${__data.fields[\"Hiden Timestamp\"]}\n\r\n\r"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "custom.filterable",
+                    "value": false
+                  },
+                  {
+                    "id": "custom.cellOptions",
+                    "value": {
+                      "type": "color-text",
+                      "wrapText": false
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Status"
+                },
+                "properties": [
+                  {
+                    "id": "mappings",
+                    "value": [
+                      {
+                        "options": {
+                          "from": 0,
+                          "result": {
+                            "index": 0,
+                            "text": "\u2705"
+                          },
+                          "to": 399
+                        },
+                        "type": "range"
+                      },
+                      {
+                        "options": {
+                          "from": 400,
+                          "result": {
+                            "index": 1,
+                            "text": "\u26a0\ufe0f"
+                          },
+                          "to": 600
+                        },
+                        "type": "range"
+                      }
+                    ]
                   }
                 ]
               }
             ]
           },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Hiden Timestamp"
-            },
-            "properties": [
-              {
-                "id": "custom.hidden",
-                "value": true
-              }
-            ]
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 11,
-        "w": 12,
-        "x": 0,
-        "y": 17
-      },
-      "id": 27,
-      "options": {
-        "cellHeight": "sm",
-        "footer": {
-          "countRows": false,
-          "enablePagination": false,
-          "fields": "",
-          "reducer": [
-            "sum"
-          ],
-          "show": false
-        },
-        "showHeader": true,
-        "sortBy": []
-      },
-      "pluginVersion": "11.4.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "influx_ql_uid"
+          "gridPos": {
+            "h": 11,
+            "w": 16,
+            "x": 0,
+            "y": 104
           },
-          "hide": false,
-          "query": "SELECT \n    time,\n    req_timestamp AS \"Hiden Timestamp\", \n    req_timestamp AS \"Show details\", \n    req_api AS \"API\",\n    req_path AS \"Path\",\n    req_method AS \"Method\",\n    res_status_code AS \"Code\",\n    res_body AS \"Response Body\"\nFROM \n    \"$dataTable\"\nWHERE $timeFilter AND\n    res_status_code >= 400\n    AND req_api =~ /^($api)$/\nORDER BY \n    time DESC\n",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "table"
-        }
-      ],
-      "title": "Errors",
-      "transformations": [
-        {
-          "id": "organize",
+          "id": 26,
           "options": {
-            "excludeByName": {
-              "Hiden Timestamp": false
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
             },
-            "includeByName": {},
-            "indexByName": {
-              "API": 3,
-              "Code": 6,
-              "Hiden Timestamp": 0,
-              "Method": 5,
-              "Path": 4,
-              "Response Body": 7,
-              "Show details": 1,
-              "Time": 2
-            },
-            "renameByName": {
-              "Time": "Date"
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "11.4.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "influx_ql_uid"
+              },
+              "hide": false,
+              "query": "SELECT\n    time,\n    req_timestamp AS \"Hiden Timestamp\", \n    req_timestamp AS \"Show details\", \n    req_api AS \"API\", \n    req_path AS \"Path\", \n    req_method AS \"Method\", \n    req_route_controller AS \"Controller\", \n    req_route_action AS \"Action\", \n    res_status_code AS \"Status\"\nFROM $dataTable\nWHERE $timeFilter AND req_api =~ /^($api)$/\nORDER BY time DESC\n",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "table"
             }
-          }
-        }
-      ],
-      "type": "table"
-    },
-    {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "influx_flux_uid"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "min": -1,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "#65c658",
-                "value": null
-              },
-              {
-                "color": "#87ce4a",
-                "value": 200
-              },
-              {
-                "color": "#ced34c",
-                "value": 400
-              },
-              {
-                "color": "#d4ae4e",
-                "value": 600
-              },
-              {
-                "color": "#d38d4c",
-                "value": 800
-              },
-              {
-                "color": "#F2495C",
-                "value": 1000
-              }
-            ]
-          },
-          "unit": "ms"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 11,
-        "w": 12,
-        "x": 12,
-        "y": 17
-      },
-      "id": 16,
-      "options": {
-        "displayMode": "gradient",
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": false
-        },
-        "maxVizHeight": 300,
-        "minVizHeight": 25,
-        "minVizWidth": 8,
-        "namePlacement": "auto",
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
           ],
-          "fields": "/^Response Time \\(ms\\)$/",
-          "limit": 1000,
-          "values": true
-        },
-        "showUnfilled": true,
-        "sizing": "manual",
-        "text": {
-          "titleSize": 15,
-          "valueSize": 25
-        },
-        "valueMode": "color"
-      },
-      "pluginVersion": "11.4.0",
-      "targets": [
-        {
-          "dataset": "iox",
-          "datasource": {
-            "type": "influxdb",
-            "uid": "influx_flux_uid"
-          },
-          "editorMode": "code",
-          "format": "table",
-          "query": "from(bucket: \"watchdogbucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"$dataTable\")\n  |> filter(fn: (r) => r[\"_field\"] == \"res_duration_ms\")\n  |> filter(fn: (r) => contains(value: r.req_api, set: ${api:json}))\n  |> keep(columns: [\"_time\", \"_value\", \"req_path\", \"req_method\"])\n  |> map(fn: (r) => ({\n       r with \n       _value: r._value,\n       combined: r.req_path + \" - \" + r.req_method\n     }))\n  |> drop(columns: [\"req_path\", \"req_method\"])\n  |> rename(columns: {_value: \"Response Time (ms)\", combined: \"_value\"})\n  |> sort(columns: [\"_time\"], desc: true)\n",
-          "rawQuery": true,
-          "rawSql": "SELECT\r\n  CONCAT(req_path, ' ', req_method) AS \"Path + Method\",\r\n  res_duration_ms AS \"Response Time (ms)\"\r\nFROM \"$dataTable\"\r\nWHERE $__timeFilter(time) AND \"req_api\" IN (${api:singlequote})\r\nORDER BY time DESC\r\nLIMIT 15",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "sql": {
-            "columns": [
-              {
-                "parameters": [],
-                "type": "function"
-              }
-            ],
-            "groupBy": [
-              {
-                "property": {
-                  "type": "string"
+          "title": "Requests",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "API": false,
+                  "Hiden Timestamp": false,
+                  "Time": false
                 },
-                "type": "groupBy"
-              }
-            ]
-          }
-        }
-      ],
-      "title": "Response Times",
-      "type": "bargauge"
-    },
-    {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "influx_ql_uid"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            }
-          },
-          "fieldMinMax": false,
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 10,
-        "w": 10,
-        "x": 0,
-        "y": 28
-      },
-      "id": 30,
-      "options": {
-        "basemap": {
-          "config": {},
-          "name": "Layer 0",
-          "type": "default"
-        },
-        "controls": {
-          "mouseWheelZoom": true,
-          "showAttribution": false,
-          "showDebug": false,
-          "showMeasure": false,
-          "showScale": false,
-          "showZoom": false
-        },
-        "layers": [
-          {
-            "config": {
-              "showLegend": false,
-              "style": {
-                "color": {
-                  "fixed": "dark-purple"
+                "includeByName": {},
+                "indexByName": {
+                  "API": 3,
+                  "Action": 7,
+                  "Controller": 6,
+                  "Hiden Timestamp": 2,
+                  "Method": 5,
+                  "Path": 4,
+                  "Show details": 0,
+                  "Status": 8,
+                  "Time": 1
                 },
-                "opacity": 0.3,
-                "rotation": {
-                  "fixed": 0,
-                  "max": 360,
-                  "min": -360,
-                  "mode": "mod"
-                },
-                "size": {
-                  "fixed": 5,
-                  "max": 15,
-                  "min": 2
-                },
-                "symbol": {
-                  "fixed": "img/icons/marker/circle.svg",
-                  "mode": "fixed"
-                },
-                "symbolAlign": {
-                  "horizontal": "center",
-                  "vertical": "bottom"
-                },
-                "text": {
-                  "field": "Name",
-                  "fixed": "",
-                  "mode": "field"
-                },
-                "textConfig": {
-                  "fontSize": 17,
-                  "offsetX": 0,
-                  "offsetY": 0,
-                  "textAlign": "center",
-                  "textBaseline": "bottom"
+                "renameByName": {
+                  "Time": "Date"
                 }
               }
-            },
-            "location": {
-              "mode": "auto"
-            },
-            "name": "Count",
-            "tooltip": true,
-            "type": "markers"
-          }
-        ],
-        "tooltip": {
-          "mode": "details"
+            }
+          ],
+          "type": "table"
         },
-        "view": {
-          "allLayers": true,
-          "id": "fit",
-          "lastOnly": false,
-          "lat": 41.5205,
-          "layer": "Layer 1",
-          "lon": 0.3459,
-          "shared": false,
-          "zoom": 15
-        }
-      },
-      "pluginVersion": "11.4.0",
-      "targets": [
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "influx_ql_uid"
+            "uid": "influx_flux_uid"
           },
-          "hide": false,
-          "query": "SELECT \n    req_location AS \"Name\",\n    req_latitude AS \"Latitude\",\n    req_longitude AS \"Longitude\"\nFROM \"$dataTable\"\nWHERE $timeFilter AND req_api =~ /${api:regex}/\nGROUP BY req_location, req_latitude, req_longitude\n",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "table"
-        }
-      ],
-      "title": "Geomap",
-      "type": "geomap"
-    },
-    {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "influx_ql_uid"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "align": "left",
-            "cellOptions": {
-              "applyToRow": false,
-              "mode": "basic",
-              "type": "color-background",
-              "wrapText": false
+          "description": "Click on 'Show details' in the table on the left to explore the data.",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "left",
+                "cellOptions": {
+                  "type": "auto"
+                },
+                "filterable": false,
+                "inspect": false
+              },
+              "mappings": [],
+              "noValue": "Click on 'Show details' in the table on the left to explore the data.",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "#ffffff"
+                  }
+                ]
+              }
             },
-            "filterable": true,
-            "inspect": false
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
+            "overrides": [
               {
-                "color": "#8e3bb866",
-                "value": null
+                "matcher": {
+                  "id": "byName",
+                  "options": "Value"
+                },
+                "properties": [
+                  {
+                    "id": "custom.inspect",
+                    "value": true
+                  },
+                  {
+                    "id": "custom.cellOptions",
+                    "value": {
+                      "type": "json-view"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Field"
+                },
+                "properties": [
+                  {
+                    "id": "custom.cellOptions",
+                    "value": {
+                      "type": "color-text",
+                      "wrapText": false
+                    }
+                  },
+                  {
+                    "id": "custom.width",
+                    "value": 169
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Order"
+                },
+                "properties": [
+                  {
+                    "id": "custom.hidden",
+                    "value": true
+                  }
+                ]
               }
             ]
-          }
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "Time"
-            },
-            "properties": []
-          }
-        ]
-      },
-      "gridPos": {
-        "h": 10,
-        "w": 14,
-        "x": 10,
-        "y": 28
-      },
-      "id": 28,
-      "options": {
-        "cellHeight": "sm",
-        "footer": {
-          "countRows": false,
-          "fields": "",
-          "reducer": [
-            "sum"
-          ],
-          "show": false
-        },
-        "showHeader": true,
-        "sortBy": []
-      },
-      "pluginVersion": "11.4.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "influx_ql_uid"
           },
-          "hide": false,
-          "query": "SELECT\ntime,\nreq_host AS \"Host\",\nreq_client_ip AS \"Client IP\",\nreq_location AS \"Location\",\nreq_api AS \"API\"\nFROM\n\"$dataTable\"\nWHERE $timeFilter AND req_api =~ /^($api)$/\nORDER BY\ntime DESC",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "table"
-        }
-      ],
-      "title": "Connexions",
-      "transformations": [
-        {
-          "id": "organize",
+          "gridPos": {
+            "h": 11,
+            "w": 8,
+            "x": 16,
+            "y": 104
+          },
+          "id": 38,
           "options": {
-            "excludeByName": {},
-            "includeByName": {},
-            "indexByName": {},
-            "renameByName": {
-              "Time": "Date"
-            }
-          }
-        }
-      ],
-      "type": "table"
-    },
-    {
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 24,
-        "x": 0,
-        "y": 38
-      },
-      "id": 18,
-      "options": {
-        "code": {
-          "language": "plaintext",
-          "showLineNumbers": false,
-          "showMiniMap": false
-        },
-        "content": "<div style=\"text-align: left; width: 100%;\">\r\n    <hr style=\"border: 1px solid white; margin-top: 5px; margin-bottom: 10px;\">\r\n    <h2 style=\"font-weight: bold; font-size: 1.8em; margin-top: 0; margin-bottom: 5px;\">API Statistics</h2>\r\n</div>\r\n",
-        "mode": "html"
-      },
-      "pluginVersion": "11.4.0",
-      "title": "",
-      "transparent": true,
-      "type": "text"
-    },
-    {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "influx_flux_uid"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "frameIndex": 0,
+            "showHeader": true,
+            "sortBy": []
           },
-          "custom": {
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
+          "pluginVersion": "11.4.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "influx_flux_uid"
+              },
+              "hide": false,
+              "query": "data = from(bucket: \"$bucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"$dataTable\")\n  |> filter(fn: (r) => contains(value: r.req_api, set: ${api:json}))\n  |> filter(fn: (r) => r[\"_field\"] == \"req_timestamp\"\n        or r[\"_field\"] == \"req_query_string\"\n        or r[\"_field\"] == \"req_body\"\n        or r[\"_field\"] == \"req_host\"\n        or r[\"_field\"] == \"req_client_ip\"\n        or r[\"_field\"] == \"req_location\"\n        or r[\"_field\"] == \"req_headers\"\n        or r[\"_field\"] == \"res_timestamp\"\n        or r[\"_field\"] == \"res_status_code\"\n        or r[\"_field\"] == \"res_body\"\n        or r[\"_field\"] == \"res_duration_ms\"\n        or r[\"_field\"] == \"res_headers\"\n        ) \n  |> pivot(rowKey:[\"_time\"], columnKey: [\"_field\"], valueColumn: \"_value\") \n  |> filter(fn: (r) => r.req_timestamp == \"$detailsQuery\")\n  |> limit(n: 1)\n\ndata\n  |> map(fn: (r) => ({\n      Order: 1,\n      Field: \"Timestamp\",\n      Value: string(v: r.req_timestamp)\n  }))\n  |> yield(name: \"1_timestamp\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 2,\n      Field: \"API\",\n      Value: string(v: r.req_api)\n  }))\n  |> yield(name: \"2_api\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 3,\n      Field: \"Path\",\n      Value: string(v: r.req_path)\n  }))\n  |> yield(name: \"3_path\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 4,\n      Field: \"Method\",\n      Value: string(v: r.req_method)\n  }))\n  |> yield(name: \"4_method\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 5,\n      Field: \"Controller\",\n      Value: string(v: r.req_route_controller)\n  }))\n  |> yield(name: \"5_controller\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 6,\n      Field: \"Action\",\n      Value: string(v: r.req_route_action)\n  }))\n  |> yield(name: \"6_action\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 7,\n      Field: \"Query String\",\n      Value: string(v: r.req_query_string)\n  }))\n  |> yield(name: \"7_query_string\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 8,\n      Field: \"Body\",\n      Value: string(v: r.req_body)\n  }))\n  |> yield(name: \"8_body\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 9,\n      Field: \"Request Host\",\n      Value: string(v: r.req_host)\n  }))\n  |> yield(name: \"9_req_host\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 10,\n      Field: \"Request IP\",\n      Value: string(v: r.req_client_ip)\n  }))\n  |> yield(name: \"10_req_ip\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 11,\n      Field: \"Request Location\",\n      Value: string(v: r.req_location)\n  }))\n  |> yield(name: \"11_req_location\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 12,\n      Field: \"Request Headers\",\n      Value: string(v: r.req_headers)\n  }))\n  |> yield(name: \"12_req_headers\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 13,\n      Field: \"Response Timestamp\",\n      Value: string(v: r.res_timestamp)\n  }))\n  |> yield(name: \"13_res_timestamp\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 14,\n      Field: \"Response Code\",\n      Value: string(v: r.res_status_code)\n  }))\n  |> yield(name: \"14_res_status_code\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 15,\n      Field: \"Response Body\",\n      Value: string(v: r.res_body)\n  }))\n  |> yield(name: \"15_res_body\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 16,\n      Field: \"Response Time (ms)\",\n      Value: string(v: r.res_duration_ms)\n  }))\n  |> yield(name: \"16_res_duration_ms\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 17,\n      Field: \"Response Headers\",\n      Value: string(v: r.res_headers)\n  }))\n  |> yield(name: \"17_res_headers\")",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "table"
             }
-          },
-          "mappings": []
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 12,
-        "w": 8,
-        "x": 0,
-        "y": 40
-      },
-      "id": 44,
-      "options": {
-        "displayLabels": [
-          "name",
-          "percent"
-        ],
-        "legend": {
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": false
-        },
-        "pieType": "pie",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
           ],
-          "fields": "",
-          "values": true
+          "title": "Request Details",
+          "transformations": [
+            {
+              "id": "merge",
+              "options": {}
+            },
+            {
+              "id": "sortBy",
+              "options": {
+                "fields": {},
+                "sort": [
+                  {
+                    "field": "Order"
+                  }
+                ]
+              }
+            }
+          ],
+          "type": "table"
         },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "11.4.0",
-      "targets": [
         {
           "datasource": {
             "type": "influxdb",
-            "uid": "influx_flux_uid"
+            "uid": "influx_ql_uid"
           },
-          "query": "from(bucket: \"watchdogbucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement == \"$dataTable\")\r\n  |> filter(fn: (r) => r._field == \"req_timestamp\")\r\n  |> filter(fn: (r) => exists r.req_api)\r\n  |> filter(fn: (r) => contains(value: r.req_api, set: ${api:json}))\r\n  |> group(columns: [\"req_api\"])\r\n  |> distinct(column: \"_value\")\r\n  |> count()\r\n  |> rename(columns: {_value: \"Count\", req_api: \"API\"})\r\n  |> map(fn: (r) => ({r with label: string(v: r.API) }))\r\n",
-          "refId": "A"
-        }
-      ],
-      "title": "Use of APIs",
-      "type": "piechart"
-    },
-    {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "influx_flux_uid"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "fixedColor": "blue",
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 23,
-            "gradientMode": "opacity",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "left",
+                "cellOptions": {
+                  "applyToRow": false,
+                  "mode": "basic",
+                  "type": "color-background",
+                  "wrapText": false
+                },
+                "filterable": true,
+                "inspect": false
+              },
+              "mappings": [],
+              "noValue": "No errors reported",
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "#f2495c66"
+                  }
+                ]
+              }
             },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineStyle": {
-              "fill": "solid"
-            },
-            "lineWidth": 1,
-            "pointSize": 8,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
+            "overrides": [
               {
-                "color": "green",
-                "value": null
+                "matcher": {
+                  "id": "byName",
+                  "options": "Response Body"
+                },
+                "properties": [
+                  {
+                    "id": "custom.inspect",
+                    "value": true
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Show details"
+                },
+                "properties": [
+                  {
+                    "id": "mappings",
+                    "value": [
+                      {
+                        "options": {
+                          "pattern": ".*",
+                          "result": {
+                            "index": 0,
+                            "text": "Show details"
+                          }
+                        },
+                        "type": "regex"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "custom.filterable"
+                  },
+                  {
+                    "id": "links",
+                    "value": [
+                      {
+                        "title": "Show details",
+                        "url": "/d/ee3qdl3l90zcwc/watchdog-middleware-techtiva?&var-detailsQuery=${__data.fields[\"Hiden Timestamp\"]}\n\r\n\r"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Hiden Timestamp"
+                },
+                "properties": [
+                  {
+                    "id": "custom.hidden",
+                    "value": true
+                  }
+                ]
               }
             ]
-          }
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 12,
+            "x": 0,
+            "y": 115
+          },
+          "id": 27,
+          "options": {
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "enablePagination": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "11.4.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "influx_ql_uid"
+              },
+              "hide": false,
+              "query": "SELECT \n    time,\n    req_timestamp AS \"Hiden Timestamp\", \n    req_timestamp AS \"Show details\", \n    req_api AS \"API\",\n    req_path AS \"Path\",\n    req_method AS \"Method\",\n    res_status_code AS \"Code\",\n    res_body AS \"Response Body\"\nFROM \n    \"$dataTable\"\nWHERE $timeFilter AND\n    res_status_code >= 400\n    AND req_api =~ /^($api)$/\nORDER BY \n    time DESC\n",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "table"
+            }
+          ],
+          "title": "Errors",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "Hiden Timestamp": false
+                },
+                "includeByName": {},
+                "indexByName": {
+                  "API": 3,
+                  "Code": 6,
+                  "Hiden Timestamp": 0,
+                  "Method": 5,
+                  "Path": 4,
+                  "Response Body": 7,
+                  "Show details": 1,
+                  "Time": 2
+                },
+                "renameByName": {
+                  "Time": "Date"
+                }
+              }
+            }
+          ],
+          "type": "table"
         },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 12,
-        "w": 16,
-        "x": 8,
-        "y": 40
-      },
-      "id": 42,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "single",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "11.4.0",
-      "targets": [
         {
           "datasource": {
             "type": "influxdb",
             "uid": "influx_flux_uid"
           },
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "min": -1,
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "#65c658"
+                  },
+                  {
+                    "color": "#87ce4a",
+                    "value": 200
+                  },
+                  {
+                    "color": "#ced34c",
+                    "value": 400
+                  },
+                  {
+                    "color": "#d4ae4e",
+                    "value": 600
+                  },
+                  {
+                    "color": "#d38d4c",
+                    "value": 800
+                  },
+                  {
+                    "color": "#F2495C",
+                    "value": 1000
+                  }
+                ]
+              },
+              "unit": "ms"
             },
-            {
-              "params": [
-                "null"
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 12,
+            "x": 12,
+            "y": 115
+          },
+          "id": 16,
+          "options": {
+            "displayMode": "gradient",
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "maxVizHeight": 300,
+            "minVizHeight": 25,
+            "minVizWidth": 8,
+            "namePlacement": "auto",
+            "orientation": "horizontal",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
               ],
-              "type": "fill"
-            }
-          ],
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "from(bucket: \"watchdogbucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"$dataTable\")\n  |> filter(fn: (r) => r[\"_field\"] == \"req_timestamp\")\n  |> filter(fn: (r) => contains(value: r.req_api, set: ${api:json}))\n  |> group(columns: [\"req_api\"])\n  |> window(every: 1d)\n  |> count()\n  |> group(columns: [\"req_api\", \"_start\"])\n  |> pivot(rowKey: [\"_start\"], columnKey: [\"req_api\"], valueColumn: \"_value\")\n  |> map(fn: (r) => ({ r with time: r._start }))\n  |> yield(name: \"count_by_api_per_day\")\n",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "table",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
+              "fields": "/^Response Time \\(ms\\)$/",
+              "limit": 1000,
+              "values": true
+            },
+            "showUnfilled": true,
+            "sizing": "manual",
+            "text": {
+              "titleSize": 15,
+              "valueSize": 25
+            },
+            "valueMode": "color"
+          },
+          "pluginVersion": "11.4.0",
+          "targets": [
+            {
+              "dataset": "iox",
+              "datasource": {
+                "type": "influxdb",
+                "uid": "influx_flux_uid"
+              },
+              "editorMode": "code",
+              "format": "table",
+              "query": "from(bucket: \"$bucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"$dataTable\")\n  |> filter(fn: (r) => r[\"_field\"] == \"res_duration_ms\")\n  |> filter(fn: (r) => contains(value: r.req_api, set: ${api:json}))\n  |> keep(columns: [\"_time\", \"_value\", \"req_path\", \"req_method\"])\n  |> map(fn: (r) => ({\n       r with \n       _value: r._value,\n       combined: r.req_path + \" - \" + r.req_method\n     }))\n  |> drop(columns: [\"req_path\", \"req_method\"])\n  |> rename(columns: {_value: \"Response Time (ms)\", combined: \"_value\"})\n  |> sort(columns: [\"_time\"], desc: true)\n",
+              "rawQuery": true,
+              "rawSql": "SELECT\r\n  CONCAT(req_path, ' ', req_method) AS \"Path + Method\",\r\n  res_duration_ms AS \"Response Time (ms)\"\r\nFROM \"$dataTable\"\r\nWHERE $__timeFilter(time) AND \"req_api\" IN (${api:singlequote})\r\nORDER BY time DESC\r\nLIMIT 15",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "sql": {
+                "columns": [
+                  {
+                    "parameters": [],
+                    "type": "function"
+                  }
                 ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
+                "groupBy": [
+                  {
+                    "property": {
+                      "type": "string"
+                    },
+                    "type": "groupBy"
+                  }
+                ]
               }
-            ]
+            }
           ],
-          "tags": []
-        }
-      ],
-      "title": "Request Count",
-      "transformations": [
+          "title": "Response Times",
+          "type": "bargauge"
+        },
         {
-          "id": "merge",
-          "options": {}
-        }
-      ],
-      "type": "timeseries"
-    },
-    {
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 24,
-        "x": 0,
-        "y": 52
-      },
-      "id": 40,
-      "maxPerRow": 8,
-      "options": {
-        "code": {
-          "language": "plaintext",
-          "showLineNumbers": false,
-          "showMiniMap": false
-        },
-        "content": "\n<div style=\"text-align: left; width: 100%;\">\n    <h2 style=\"font-weight: bold; margin-top: 20px;\">\ud83c\udf10 $api</h2>\n</div>",
-        "mode": "markdown"
-      },
-      "pluginVersion": "11.4.0",
-      "repeat": "api",
-      "repeatDirection": "h",
-      "title": "",
-      "transparent": true,
-      "type": "text"
-    },
-    {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "influx_flux_uid"
-      },
-      "description": "$api",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "super-light-yellow",
-                "value": 200
-              },
-              {
-                "color": "#b3bf69",
-                "value": 400
-              },
-              {
-                "color": "#ebdb38",
-                "value": 600
-              },
-              {
-                "color": "orange",
-                "value": 800
-              },
-              {
-                "color": "red",
-                "value": 1000
-              }
-            ]
-          },
-          "unit": "ms"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 13,
-        "w": 24,
-        "x": 0,
-        "y": 54
-      },
-      "id": 20,
-      "maxPerRow": 8,
-      "options": {
-        "displayMode": "basic",
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": false
-        },
-        "maxVizHeight": 300,
-        "minVizHeight": 16,
-        "minVizWidth": 8,
-        "namePlacement": "auto",
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "limit": 15,
-          "values": true
-        },
-        "showUnfilled": true,
-        "sizing": "auto",
-        "valueMode": "color"
-      },
-      "pluginVersion": "11.4.0",
-      "repeat": "api",
-      "repeatDirection": "h",
-      "targets": [
-        {
-          "dataset": "iox",
           "datasource": {
             "type": "influxdb",
-            "uid": "influx_flux_uid"
+            "uid": "influx_ql_uid"
           },
-          "editorMode": "code",
-          "format": "table",
-          "query": "from(bucket: \"watchdogbucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"$dataTable\")\n  |> filter(fn: (r) => r[\"req_api\"] == \"$api\")\n  |> filter(fn: (r) => r[\"_field\"] == \"res_duration_ms\")\n  |> group(columns: [\"req_path\", \"req_method\"])\n  |> mean(column: \"_value\")\n  |> map(fn: (r) => ({ r with title: r[\"req_path\"] + \" - \" + r[\"req_method\"] }))\n  |> sort(columns: [\"_value\"], desc: true)\n",
-          "rawQuery": true,
-          "rawSql": "SELECT\r\n  req_path AS \"Path\",\r\n  req_method AS \"Method\",\r\n  AVG(res_duration_ms) AS \"Avg Duration (ms)\"\r\nFROM \"$dataTable\"\r\nWHERE $__timeFilter(time) AND req_api = '$api'\r\nGROUP BY req_path, req_method\r\nORDER BY \"Avg Duration (ms)\" DESC",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "sql": {
-            "columns": [
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                }
+              },
+              "fieldMinMax": false,
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 10,
+            "x": 0,
+            "y": 126
+          },
+          "id": 30,
+          "options": {
+            "basemap": {
+              "config": {},
+              "name": "Layer 0",
+              "type": "default"
+            },
+            "controls": {
+              "mouseWheelZoom": true,
+              "showAttribution": false,
+              "showDebug": false,
+              "showMeasure": false,
+              "showScale": false,
+              "showZoom": false
+            },
+            "layers": [
               {
-                "parameters": [],
-                "type": "function"
+                "config": {
+                  "showLegend": false,
+                  "style": {
+                    "color": {
+                      "fixed": "dark-purple"
+                    },
+                    "opacity": 0.3,
+                    "rotation": {
+                      "fixed": 0,
+                      "max": 360,
+                      "min": -360,
+                      "mode": "mod"
+                    },
+                    "size": {
+                      "fixed": 5,
+                      "max": 15,
+                      "min": 2
+                    },
+                    "symbol": {
+                      "fixed": "img/icons/marker/circle.svg",
+                      "mode": "fixed"
+                    },
+                    "symbolAlign": {
+                      "horizontal": "center",
+                      "vertical": "bottom"
+                    },
+                    "text": {
+                      "field": "Name",
+                      "fixed": "",
+                      "mode": "field"
+                    },
+                    "textConfig": {
+                      "fontSize": 17,
+                      "offsetX": 0,
+                      "offsetY": 0,
+                      "textAlign": "center",
+                      "textBaseline": "bottom"
+                    }
+                  }
+                },
+                "location": {
+                  "mode": "auto"
+                },
+                "name": "Count",
+                "tooltip": true,
+                "type": "markers"
               }
             ],
-            "groupBy": [
-              {
-                "property": {
-                  "type": "string"
+            "tooltip": {
+              "mode": "details"
+            },
+            "view": {
+              "allLayers": true,
+              "id": "fit",
+              "lastOnly": false,
+              "lat": 41.5205,
+              "layer": "Layer 1",
+              "lon": 0.3459,
+              "shared": false,
+              "zoom": 15
+            }
+          },
+          "pluginVersion": "11.4.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "influx_ql_uid"
+              },
+              "hide": false,
+              "query": "SELECT \n    req_location AS \"Name\",\n    req_latitude AS \"Latitude\",\n    req_longitude AS \"Longitude\"\nFROM \"$dataTable\"\nWHERE $timeFilter AND req_api =~ /${api:regex}/\nGROUP BY req_location, req_latitude, req_longitude\n",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "table"
+            }
+          ],
+          "title": "Geomap",
+          "type": "geomap"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "influx_ql_uid"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "left",
+                "cellOptions": {
+                  "applyToRow": false,
+                  "mode": "basic",
+                  "type": "color-background",
+                  "wrapText": false
                 },
-                "type": "groupBy"
+                "filterable": true,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "#8e3bb866"
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Time"
+                },
+                "properties": []
               }
             ]
-          }
-        }
-      ],
-      "title": "Average Response Times",
-      "transformations": [
-        {
-          "id": "merge",
-          "options": {}
-        },
-        {
-          "id": "sortBy",
+          },
+          "gridPos": {
+            "h": 10,
+            "w": 14,
+            "x": 10,
+            "y": 126
+          },
+          "id": 28,
           "options": {
-            "fields": {},
-            "sort": [
-              {
-                "desc": true,
-                "field": "_value"
+            "cellHeight": "sm",
+            "footer": {
+              "countRows": false,
+              "fields": "",
+              "reducer": [
+                "sum"
+              ],
+              "show": false
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "11.4.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "influx_ql_uid"
+              },
+              "hide": false,
+              "query": "SELECT\ntime,\nreq_host AS \"Host\",\nreq_client_ip AS \"Client IP\",\nreq_location AS \"Location\",\nreq_api AS \"API\"\nFROM\n\"$dataTable\"\nWHERE $timeFilter AND req_api =~ /^($api)$/\nORDER BY\ntime DESC",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "table"
+            }
+          ],
+          "title": "Connexions",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {},
+                "includeByName": {},
+                "indexByName": {},
+                "renameByName": {
+                  "Time": "Date"
+                }
               }
-            ]
-          }
+            }
+          ],
+          "type": "table"
         }
       ],
-      "type": "bargauge"
+      "title": "\ud83d\udce5 Last Requests",
+      "type": "row"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "influx_flux_uid"
-      },
-      "description": "$api\n",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "fieldMinMax": false,
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "purple",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
+      "collapsed": true,
       "gridPos": {
-        "h": 10,
+        "h": 1,
         "w": 24,
         "x": 0,
-        "y": 67
+        "y": 8
       },
-      "id": 35,
-      "maxPerRow": 8,
-      "options": {
-        "displayMode": "basic",
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": false
+      "id": 52,
+      "panels": [
+        {
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 2,
+            "w": 24,
+            "x": 0,
+            "y": 313
+          },
+          "id": 18,
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
+            },
+            "content": "<div style=\"text-align: left; width: 100%;\">\r\n    <hr style=\"border: 1px solid white; margin-top: 5px; margin-bottom: 10px;\">\r\n    <h2 style=\"font-weight: bold; font-size: 1.8em; margin-top: 0; margin-bottom: 5px;\">API Statistics</h2>\r\n</div>\r\n",
+            "mode": "html"
+          },
+          "pluginVersion": "11.4.0",
+          "title": "",
+          "transparent": true,
+          "type": "text"
         },
-        "maxVizHeight": 300,
-        "minVizHeight": 35,
-        "minVizWidth": 8,
-        "namePlacement": "auto",
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "limit": 10,
-          "values": true
-        },
-        "showUnfilled": true,
-        "sizing": "auto",
-        "text": {
-          "titleSize": 15,
-          "valueSize": 30
-        },
-        "valueMode": "color"
-      },
-      "pluginVersion": "11.4.0",
-      "repeat": "api",
-      "repeatDirection": "h",
-      "targets": [
         {
           "datasource": {
             "type": "influxdb",
             "uid": "influx_flux_uid"
           },
-          "query": "from(bucket: \"watchdogbucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement == \"$dataTable\")\r\n  |> filter(fn: (r) => r.req_api == \"$api\")\r\n  |> group(columns: [\"req_path\", \"req_method\"])\r\n  |> count()\r\n  |> map(fn: (r) => ({\r\n       Count: r._value / 14,\r\n       title: r.req_path  + \" - \" + r.req_method\r\n     }))\r\n  |> group()\r\n  |> sort(columns: [\"Count\"], desc: true)",
-          "refId": "A"
-        }
-      ],
-      "title": "Top 10 Path + Method Count",
-      "type": "bargauge"
-    },
-    {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "influx_flux_uid"
-      },
-      "description": "$api\n",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                }
+              },
+              "mappings": []
+            },
+            "overrides": []
           },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "blue",
-                "value": null
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 10,
-        "w": 24,
-        "x": 0,
-        "y": 77
-      },
-      "id": 36,
-      "maxPerRow": 8,
-      "options": {
-        "displayMode": "basic",
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": false
-        },
-        "maxVizHeight": 300,
-        "minVizHeight": 16,
-        "minVizWidth": 8,
-        "namePlacement": "auto",
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
+          "gridPos": {
+            "h": 12,
+            "w": 8,
+            "x": 0,
+            "y": 315
+          },
+          "id": 44,
+          "options": {
+            "displayLabels": [
+              "name",
+              "percent"
+            ],
+            "legend": {
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "pieType": "pie",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": true
+            },
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "11.4.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "influx_flux_uid"
+              },
+              "query": "from(bucket: \"$bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement == \"$dataTable\")\r\n  |> filter(fn: (r) => r._field == \"req_timestamp\")\r\n  |> filter(fn: (r) => exists r.req_api)\r\n  |> filter(fn: (r) => contains(value: r.req_api, set: ${api:json}))\r\n  |> group(columns: [\"req_api\"])\r\n  |> distinct(column: \"_value\")\r\n  |> count()\r\n  |> rename(columns: {_value: \"Count\", req_api: \"API\"})\r\n  |> map(fn: (r) => ({r with label: string(v: r.API) }))\r\n",
+              "refId": "A"
+            }
           ],
-          "fields": "",
-          "limit": 10,
-          "values": true
+          "title": "Use of APIs",
+          "type": "piechart"
         },
-        "showUnfilled": true,
-        "sizing": "auto",
-        "text": {
-          "titleSize": 15,
-          "valueSize": 30
-        },
-        "valueMode": "color"
-      },
-      "pluginVersion": "11.4.0",
-      "repeat": "api",
-      "repeatDirection": "h",
-      "targets": [
         {
           "datasource": {
             "type": "influxdb",
             "uid": "influx_flux_uid"
           },
-          "query": "from(bucket: \"watchdogbucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement == \"$dataTable\")\r\n  |> filter(fn: (r) => r.req_api == \"$api\")\r\n  |> group(columns: [\"req_route_controller\", \"req_route_action\"])\r\n  |> count()\r\n  |> map(fn: (r) => ({\r\n       Count: r._value / 14,\r\n       title: r.req_route_controller  + \" - \" + r.req_route_action\r\n     }))\r\n  |> group()\r\n  |> sort(columns: [\"Count\"], desc: true)",
-          "refId": "A"
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "fixedColor": "blue",
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 23,
+                "gradientMode": "opacity",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 8,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 12,
+            "w": 16,
+            "x": 8,
+            "y": 315
+          },
+          "id": 42,
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "11.4.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "influx_flux_uid"
+              },
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "from(bucket: \"$bucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"$dataTable\")\n  |> filter(fn: (r) => r[\"_field\"] == \"req_timestamp\")\n  |> filter(fn: (r) => contains(value: r.req_api, set: ${api:json}))\n  |> group(columns: [\"req_api\"])\n  |> window(every: 1d)\n  |> count()\n  |> group(columns: [\"req_api\", \"_start\"])\n  |> pivot(rowKey: [\"_start\"], columnKey: [\"req_api\"], valueColumn: \"_value\")\n  |> map(fn: (r) => ({ r with time: r._start }))\n  |> yield(name: \"count_by_api_per_day\")\n",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "table",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "title": "Request Count",
+          "transformations": [
+            {
+              "id": "merge",
+              "options": {}
+            }
+          ],
+          "type": "timeseries"
+        },
+        {
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 2,
+            "w": 8,
+            "x": 0,
+            "y": 327
+          },
+          "id": 40,
+          "maxPerRow": 8,
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
+            },
+            "content": "<div style=\"text-align: left; width: 100%;\">\n    <hr style=\"border: 1px solid white; margin-top: 5px; margin-bottom: 10px;\">\n    <h2 style=\"font-weight: bold; font-size: 1.8em; margin-top: 0; margin-bottom: 5px;\">Average Response Times</h2>\n</div>\n",
+            "mode": "markdown"
+          },
+          "pluginVersion": "11.4.0",
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        },
+        {
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 2,
+            "w": 8,
+            "x": 8,
+            "y": 327
+          },
+          "id": 53,
+          "maxPerRow": 8,
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
+            },
+            "content": "<div style=\"text-align: left; width: 100%;\">\n    <hr style=\"border: 1px solid white; margin-top: 5px; margin-bottom: 10px;\">\n    <h2 style=\"font-weight: bold; font-size: 1.8em; margin-top: 0; margin-bottom: 5px;\">Top 10 Path + Method Count</h2>\n</div>\n",
+            "mode": "markdown"
+          },
+          "pluginVersion": "11.4.0",
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        },
+        {
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 2,
+            "w": 8,
+            "x": 16,
+            "y": 327
+          },
+          "id": 54,
+          "maxPerRow": 8,
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
+            },
+            "content": "<div style=\"text-align: left; width: 100%;\">\n    <hr style=\"border: 1px solid white; margin-top: 5px; margin-bottom: 10px;\">\n    <h2 style=\"font-weight: bold; font-size: 1.8em; margin-top: 0; margin-bottom: 5px;\">Top 10 Controller + Action Count</h2>\n</div>\n",
+            "mode": "markdown"
+          },
+          "pluginVersion": "11.4.0",
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "influx_flux_uid"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green"
+                  },
+                  {
+                    "color": "super-light-yellow",
+                    "value": 200
+                  },
+                  {
+                    "color": "#b3bf69",
+                    "value": 400
+                  },
+                  {
+                    "color": "#ebdb38",
+                    "value": 600
+                  },
+                  {
+                    "color": "orange",
+                    "value": 800
+                  },
+                  {
+                    "color": "red",
+                    "value": 1000
+                  }
+                ]
+              },
+              "unit": "ms"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 14,
+            "w": 8,
+            "x": 0,
+            "y": 329
+          },
+          "id": 20,
+          "maxPerRow": 8,
+          "options": {
+            "displayMode": "basic",
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "maxVizHeight": 300,
+            "minVizHeight": 16,
+            "minVizWidth": 8,
+            "namePlacement": "auto",
+            "orientation": "horizontal",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "limit": 15,
+              "values": true
+            },
+            "showUnfilled": true,
+            "sizing": "auto",
+            "text": {},
+            "valueMode": "color"
+          },
+          "pluginVersion": "11.4.0",
+          "repeat": "api",
+          "repeatDirection": "v",
+          "targets": [
+            {
+              "dataset": "iox",
+              "datasource": {
+                "type": "influxdb",
+                "uid": "influx_flux_uid"
+              },
+              "editorMode": "code",
+              "format": "table",
+              "query": "from(bucket: \"$bucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"$dataTable\")\n  |> filter(fn: (r) => r[\"req_api\"] == \"$api\")\n  |> filter(fn: (r) => r[\"_field\"] == \"res_duration_ms\")\n  |> group(columns: [\"req_path\", \"req_method\"])\n  |> mean(column: \"_value\")\n  |> map(fn: (r) => ({ r with title: r[\"req_path\"] + \" - \" + r[\"req_method\"] }))\n  |> sort(columns: [\"_value\"], desc: true)\n",
+              "rawQuery": true,
+              "rawSql": "SELECT\r\n  req_path AS \"Path\",\r\n  req_method AS \"Method\",\r\n  AVG(res_duration_ms) AS \"Avg Duration (ms)\"\r\nFROM \"$dataTable\"\r\nWHERE $__timeFilter(time) AND req_api = '$api'\r\nGROUP BY req_path, req_method\r\nORDER BY \"Avg Duration (ms)\" DESC",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "sql": {
+                "columns": [
+                  {
+                    "parameters": [],
+                    "type": "function"
+                  }
+                ],
+                "groupBy": [
+                  {
+                    "property": {
+                      "type": "string"
+                    },
+                    "type": "groupBy"
+                  }
+                ]
+              }
+            }
+          ],
+          "title": "\ud83c\udf10 $api",
+          "transformations": [
+            {
+              "id": "merge",
+              "options": {}
+            },
+            {
+              "id": "sortBy",
+              "options": {
+                "fields": {},
+                "sort": [
+                  {
+                    "desc": true,
+                    "field": "_value"
+                  }
+                ]
+              }
+            }
+          ],
+          "type": "bargauge"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "influx_flux_uid"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "fieldMinMax": false,
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "purple"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 14,
+            "w": 8,
+            "x": 8,
+            "y": 329
+          },
+          "id": 35,
+          "maxPerRow": 8,
+          "options": {
+            "displayMode": "basic",
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "maxVizHeight": 300,
+            "minVizHeight": 35,
+            "minVizWidth": 8,
+            "namePlacement": "auto",
+            "orientation": "horizontal",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "limit": 10,
+              "values": true
+            },
+            "showUnfilled": true,
+            "sizing": "auto",
+            "text": {
+              "titleSize": 14,
+              "valueSize": 30
+            },
+            "valueMode": "color"
+          },
+          "pluginVersion": "11.4.0",
+          "repeat": "api",
+          "repeatDirection": "v",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "influx_flux_uid"
+              },
+              "query": "from(bucket: \"$bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement == \"$dataTable\")\r\n  |> filter(fn: (r) => r.req_api == \"$api\")\r\n  |> group(columns: [\"req_path\", \"req_method\"])\r\n  |> count()\r\n  |> map(fn: (r) => ({\r\n       Count: r._value / 14,\r\n       title: r.req_path  + \" - \" + r.req_method\r\n     }))\r\n  |> group()\r\n  |> sort(columns: [\"Count\"], desc: true)",
+              "refId": "A"
+            }
+          ],
+          "title": "\ud83c\udf10 $api",
+          "type": "bargauge"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "influx_flux_uid"
+          },
+          "description": "\n",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "blue"
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 14,
+            "w": 8,
+            "x": 16,
+            "y": 329
+          },
+          "id": 36,
+          "maxPerRow": 8,
+          "options": {
+            "displayMode": "basic",
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "maxVizHeight": 300,
+            "minVizHeight": 16,
+            "minVizWidth": 8,
+            "namePlacement": "auto",
+            "orientation": "horizontal",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "limit": 10,
+              "values": true
+            },
+            "showUnfilled": true,
+            "sizing": "auto",
+            "text": {
+              "titleSize": 14,
+              "valueSize": 30
+            },
+            "valueMode": "color"
+          },
+          "pluginVersion": "11.4.0",
+          "repeat": "api",
+          "repeatDirection": "v",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "influx_flux_uid"
+              },
+              "query": "from(bucket: \"$bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement == \"$dataTable\")\r\n  |> filter(fn: (r) => r.req_api == \"$api\")\r\n  |> group(columns: [\"req_route_controller\", \"req_route_action\"])\r\n  |> count()\r\n  |> map(fn: (r) => ({\r\n       Count: r._value / 14,\r\n       title: r.req_route_controller  + \" - \" + r.req_route_action\r\n     }))\r\n  |> group()\r\n  |> sort(columns: [\"Count\"], desc: true)",
+              "refId": "A"
+            }
+          ],
+          "title": "\ud83c\udf10 $api",
+          "type": "bargauge"
         }
       ],
-      "title": "Top 10 Controller + Action Count",
-      "type": "bargauge"
+      "title": "\ud83d\udcca API Statistics",
+      "type": "row"
     }
   ],
   "preload": false,
@@ -1524,18 +1829,26 @@
           "text": "watchdogdatatable",
           "value": "watchdogdatatable"
         },
+        "description": "Name of InfluxDB data table",
         "hide": 2,
         "label": "Data Table",
         "name": "dataTable",
-        "options": [
-          {
-            "selected": true,
-            "text": "watchdogdatatable",
-            "value": "watchdogdatatable"
-          }
-        ],
         "query": "watchdogdatatable",
-        "type": "textbox"
+        "skipUrlSync": true,
+        "type": "constant"
+      },
+      {
+        "current": {
+          "text": "watchdogbucket",
+          "value": "watchdogbucket"
+        },
+        "description": "Name of InfluxDB bucket",
+        "hide": 2,
+        "label": "Bucket",
+        "name": "bucket",
+        "query": "watchdogbucket",
+        "skipUrlSync": true,
+        "type": "constant"
       },
       {
         "current": {
@@ -1551,8 +1864,9 @@
           "uid": "influx_ql_uid"
         },
         "definition": "SHOW TAG VALUES FROM $dataTable WITH KEY = \"req_api\" ",
-        "includeAll": false,
-        "label": "API",
+        "description": "List of APIs who have made a request to filter in general",
+        "includeAll": true,
+        "label": "API Request",
         "multi": true,
         "name": "api",
         "options": [],
@@ -1561,6 +1875,35 @@
           "refId": "InfluxVariableQueryEditor-VariableQuery"
         },
         "refresh": 2,
+        "regex": "",
+        "type": "query"
+      },
+      {
+        "current": {
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "prometheus_uid"
+        },
+        "definition": "label_values(probe_success, instance)",
+        "description": "List of APIs to filter in the API Status section",
+        "includeAll": true,
+        "label": "API Status",
+        "multi": true,
+        "name": "apiStatus",
+        "options": [],
+        "query": {
+          "qryType": 5,
+          "query": "label_values(probe_success, instance)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
         "regex": "",
         "type": "query"
       },
@@ -1591,6 +1934,6 @@
   "timezone": "Europe/Madrid",
   "title": "Watchdog Middleware",
   "uid": "ee3qdl3l90zcwc",
-  "version": 158,
+  "version": 1,
   "weekStart": ""
 }

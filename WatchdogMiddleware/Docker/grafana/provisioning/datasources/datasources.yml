@@ -25,3 +25,9 @@ datasources:
     jsonData:
       httpMode: GET
       version: InfluxQL
+
+  - name: prometheus
+    type: prometheus
+    uid: prometheus_uid
+    access: proxy
+    url: http://prometheus:9090

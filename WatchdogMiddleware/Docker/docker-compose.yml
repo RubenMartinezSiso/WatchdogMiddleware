@@ -14,21 +14,44 @@ services:
 
   grafana:
     build: 
-        context: ./grafana
+      context: ./grafana
     volumes:
       - grafana-storage:/var/lib/grafana:rw
       - ./grafana/provisioning:/etc/grafana/provisioning
       - ../Models:/etc/grafana/models
     depends_on:
       - influxdb
+      - blackbox-exporter
+      - prometheus
     ports:
       - ${GRAFANA_PORT}:3000
     env_file:
       - .env
     entrypoint: >
-        /bin/sh -c "
-        python3 /etc/grafana/provisioning/dashboards/modify_dashboard.py &&
-        /run.sh"
+      /bin/sh -c "
+      python3 /etc/grafana/provisioning/dashboards/modify_dashboard.py &&
+      /run.sh"
+    environment:
+      - GF_SMTP_ENABLED=${GF_SMTP_ENABLED}
+      - GF_SMTP_HOST=${GF_SMTP_HOST}
+      - GF_SMTP_USER=${GF_SMTP_USER}
+      - GF_SMTP_PASSWORD=${GF_SMTP_PASSWORD}
+      - GF_SMTP_FROM_ADDRESS=${GF_SMTP_FROM_ADDRESS}
+      - GF_SMTP_FROM_NAME=Grafana
+
+  blackbox-exporter:
+    image: prom/blackbox-exporter:latest
+    ports:
+      - "${BLACKBOX_PORT}:9115"
+
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    ports:
+      - "${PROMETHEUS_PORT}:9090"
+    depends_on:
+      - blackbox-exporter
 
 volumes:
   grafana-storage:

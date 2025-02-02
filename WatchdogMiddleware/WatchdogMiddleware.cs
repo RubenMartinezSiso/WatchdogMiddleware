@@ -151,7 +151,7 @@ namespace WatchdogMiddleware
                 return new InterceptedRequest
                 {
                     Timestamp = DateTime.UtcNow,
-                    ApiName = ExtractApiName(context),
+                    ApiName = _options.ApiName != "Unknown API" ? _options.ApiName : ExtractApiName(context),
                     Method = context.Request.Method,
                     Path = context.Request.Path,
                     QueryString = context.Request.QueryString.ToString(),
