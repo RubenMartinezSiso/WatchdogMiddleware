@@ -46,5 +46,10 @@ for var in dashboard.get('templating', {}).get('list', []):
         var['current']['value'] = datatable
         var['query'] = datatable
 
+    if var.get('name') == 'bucket':
+        var['current']['text'] = bucket
+        var['current']['value'] = bucket
+        var['query'] = bucket
+
 with open(dashboard_path, 'w') as file:
     json.dump(dashboard, file, indent=2)
