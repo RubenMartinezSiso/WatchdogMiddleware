@@ -19,6 +19,7 @@ services:
       - grafana-storage:/var/lib/grafana:rw
       - ./grafana/provisioning:/etc/grafana/provisioning
       - ../Models:/etc/grafana/models
+      - ./grafana/provisioning/alerting:/etc/grafana/provisioning/alerting:ro
     depends_on:
       - influxdb
       - blackbox-exporter
@@ -48,6 +49,7 @@ services:
     image: prom/prometheus:latest
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./prometheus/targets:/etc/prometheus/targets:ro
     ports:
       - "${PROMETHEUS_PORT}:9090"
     depends_on:

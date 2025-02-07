@@ -6,16 +6,14 @@ scrape_configs:
     metrics_path: /probe
     params:
       module: [tcp_connect]
-    static_configs:
-      - targets:
-          - 129.151.225.1:8204 
-          - 84.235.234.100:8204
-          - https://comercial.techtiva.tech/
-
+    file_sd_configs:
+      - files:
+        - '/etc/prometheus/targets/*.yml'
+        refresh_interval: 5m
     relabel_configs:
       - source_labels: [__address__]
         target_label: __param_target
       - target_label: __address__
-        replacement: blackbox-exporter:9115 
+        replacement: blackbox-exporter:9115
       - source_labels: [__param_target]
         target_label: instance
