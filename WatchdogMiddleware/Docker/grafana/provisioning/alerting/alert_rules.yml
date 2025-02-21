@@ -1,0 +1,65 @@
+﻿apiVersion: 1
+
+groups:
+  - orgId: 1
+    name: "WD Evaluation group"
+    folder: "WD Folder rule"
+    interval: 1m
+    rules:
+      - uid: apiAlertDown
+        title: "API Alert down"
+        condition: A
+        data:
+          - refId: A
+            relativeTimeRange:
+              from: 600
+              to: 0
+            datasourceUid: prometheus_uid
+            model:
+              datasource:
+                type: prometheus
+                uid: prometheus_uid
+              editorMode: code
+              expr: probe_success
+              hide: false
+              instant: true
+              intervalMs: 1000
+              legendFormat: __auto
+              maxDataPoints: 43200
+              range: false
+              refId: A
+          - refId: B
+            datasourceUid: __expr__
+            model:
+              conditions:
+                - evaluator:
+                    params:
+                      - 0.5
+                      - 0
+                    type: lt
+                  operator:
+                    type: and
+                  query:
+                    params: []
+                  reducer:
+                    params: []
+                    type: avg
+                  type: query
+              datasource:
+                name: Expression
+                type: __expr__
+                uid: __expr__
+              expression: A
+              hide: false
+              intervalMs: 1000
+              maxDataPoints: 43200
+              refId: B
+              type: threshold
+        noDataState: NoData
+        execErrState: Error
+        for: 1m
+        annotations:
+            summary: "🚨 API Alert: An instance is down. Check availability, connectivity, and server logs. More details in the message. Notified by Watchdog Middleware 🐶"
+        isPaused: false
+        labels:
+            contact: "whatchdog_email"
