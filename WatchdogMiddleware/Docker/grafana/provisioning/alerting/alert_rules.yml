@@ -8,7 +8,7 @@ groups:
     rules:
       - uid: apiAlertDown
         title: "API Alert down"
-        condition: A
+        condition: B
         data:
           - refId: A
             relativeTimeRange:
@@ -34,7 +34,7 @@ groups:
               conditions:
                 - evaluator:
                     params:
-                      - 0.5
+                      - 1
                       - 0
                     type: lt
                   operator:
@@ -55,11 +55,12 @@ groups:
               maxDataPoints: 43200
               refId: B
               type: threshold
-        noDataState: NoData
+        noDataState: KeepLast
         execErrState: Error
         for: 1m
         annotations:
-            summary: "🚨 API Alert: An instance is down. Check availability, connectivity, and server logs. More details in the message. Notified by Watchdog Middleware 🐶"
-        isPaused: false
+          summary: "🚨 API Alert: Service Down on {{ .Labels.instance }}"
+          description: "API service on {{ .Labels.instance }} is unresponsive! Immediate action required. Notified by Watchdog Middleware 🐶"
+        isPaused: ${GF_NOTIFIER_EMAIL_DISABLE}
         labels:
             contact: "whatchdog_email"
