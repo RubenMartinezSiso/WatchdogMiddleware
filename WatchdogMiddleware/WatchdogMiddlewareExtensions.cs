@@ -21,6 +21,7 @@ public static class WatchdogMiddlewareExtensions
     {
         var options = new WatchdogOptions();
         configureOptions?.Invoke(options);
+        WatchdogOptionsHolder.Options = options;
         return builder.UseMiddleware<WatchdogMiddleware.WatchdogMiddleware>(options);
     }
 }

@@ -52,9 +52,7 @@ namespace WatchdogMiddleware
         public async Task InvokeAsync(HttpContext context)
         {
             if (context == null)
-            {
                 throw new ArgumentNullException(nameof(context));
-            }
 
             var path = context.Request.Path.Value;
             var method = context.Request.Method.ToUpper();
@@ -67,9 +65,7 @@ namespace WatchdogMiddleware
             }
 
             if (_options.ActivateLogs)
-            {
                 _logger.LogInformation("WatchdogMiddleware: Starting request processing");
-            }
 
             var startTime = DateTime.UtcNow;
             InterceptedRequest request = null;
@@ -105,15 +101,11 @@ namespace WatchdogMiddleware
             catch (Exception ex)
             {
                 if (_options.ActivateLogs)
-                {
                     _logger.LogError(ex, "WatchdogMiddleware: An error occurred during request processing");
-                }
             }
 
             if (_options.ActivateLogs)
-            {
                 _logger.LogInformation("WatchdogMiddleware: Finished request processing");
-            }
         }
 
         private string EncryptBody(string body)
@@ -130,9 +122,8 @@ namespace WatchdogMiddleware
             catch (Exception ex)
             {
                 if (_options.ActivateLogs)
-                {
                     _logger.LogError(ex, "WatchdogMiddleware: Error encrypting body");
-                }
+
                 return string.Empty;
             }
         }
@@ -169,9 +160,8 @@ namespace WatchdogMiddleware
             catch (Exception ex)
             {
                 if (_options.ActivateLogs)
-                {
                     _logger.LogError(ex, "WatchdogMiddleware: Error logging request");
-                }
+                
                 return new InterceptedRequest();
             }
         }
@@ -192,9 +182,8 @@ namespace WatchdogMiddleware
             catch (Exception ex)
             {
                 if (_options.ActivateLogs)
-                {
                     _logger.LogError(ex, "WatchdogMiddleware: Error logging response");
-                }
+                
                 return new InterceptedResponse();
             }
         }
@@ -213,9 +202,7 @@ namespace WatchdogMiddleware
             catch (Exception ex)
             {
                 if (_options.ActivateLogs)
-                {
                     _logger.LogError(ex, "WatchdogMiddleware: Error extracting API name from assembly");
-                }
             }
 
             return _options.ApiName;
@@ -227,11 +214,8 @@ namespace WatchdogMiddleware
             if (string.IsNullOrEmpty(ip))
                 return ("Unknown Location", null, null);
 
-            if (_consecutiveErrors >= ERROR_THRESHOLD ||
-                (DateTime.UtcNow - _lastErrorTime).TotalSeconds < ERROR_TIMEOUT_SECONDS)
-            {
+            if (_consecutiveErrors >= ERROR_THRESHOLD || (DateTime.UtcNow - _lastErrorTime).TotalSeconds < ERROR_TIMEOUT_SECONDS)
                 return ("Unknown Location", null, null);
-            }
 
             if (_locationCache.TryGetValue(ip, out (string, double?, double?) cachedLocation))
                 return cachedLocation;
@@ -261,9 +245,8 @@ namespace WatchdogMiddleware
                 _lastErrorTime = DateTime.UtcNow;
 
                 if (_options.ActivateLogs)
-                {
                     _logger.LogError(ex, "WatchdogMiddleware: Error getting location from IP");
-                }
+                
                 return ("Unknown Location", null, null);
             }
         }
@@ -283,9 +266,8 @@ namespace WatchdogMiddleware
             catch (Exception ex)
             {
                 if (_options.ActivateLogs)
-                {
                     _logger.LogError(ex, "WatchdogMiddleware: Error reading request body");
-                }
+
                 return string.Empty;
             }
         }
@@ -304,9 +286,8 @@ namespace WatchdogMiddleware
             catch (Exception ex)
             {
                 if (_options.ActivateLogs)
-                {
                     _logger.LogError(ex, "WatchdogMiddleware: Error reading response body");
-                }
+
                 return string.Empty;
             }
         }
@@ -316,9 +297,8 @@ namespace WatchdogMiddleware
             if (request == null || response == null)
             {
                 if (_options.ActivateLogs)
-                {
                     _logger.LogError("WatchdogMiddleware: Cannot write to InfluxDB, request or response is null");
-                }
+                
                 return;
             }
 
@@ -350,13 +330,14 @@ namespace WatchdogMiddleware
                     .Field("res_headers", JsonConvert.SerializeObject(response.Headers));
 
                 writeApi.WritePoint(point, _options.InfluxDbBucket, _options.InfluxDbOrg);
+
+                if (_options.ActivateLogs)
+                    _logger.LogInformation("WatchdogMiddleware: Process completed");
             }
             catch (Exception ex)
             {
                 if (_options.ActivateLogs)
-                {
                     _logger.LogError(ex, "WatchdogMiddleware: Error writing to InfluxDB");
-                }
             }
         }
     }

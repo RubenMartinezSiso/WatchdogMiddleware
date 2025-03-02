@@ -1,7 +1,6 @@
 ﻿import json
 import os
 
-dashboard_path = '/etc/grafana/provisioning/dashboards/template.json'
 watchdog_options_path = '/etc/grafana/models/WatchdogOptions.cs'
 
 host = os.getenv('DOCKER_INFLUXDB_INIT_HOST', 'localhost')
@@ -10,6 +9,7 @@ token = os.getenv('DOCKER_INFLUXDB_INIT_ADMIN_TOKEN', 'default-token')
 org = os.getenv('DOCKER_INFLUXDB_INIT_ORG', 'default-org')
 bucket = os.getenv('DOCKER_INFLUXDB_INIT_BUCKET', 'default-bucket')
 datatable = os.getenv('DOCKER_INFLUXDB_INIT_DT', 'watchdogdatatable')
+ckptdatatable = os.getenv('DOCKER_INFLUXDB_INIT_CKPTDT', 'checkpointdatatable')
 
 csharp_code = f'''using System;
 using System.Collections.Generic;
@@ -30,26 +30,10 @@ namespace WatchdogMiddleware.Models
         public string InfluxDbBucket {{ get; set; }} = "{bucket}";
         public string DataTable {{ get; set; }} = "{datatable}";
         public string InfluxDbUrl {{ get; set; }} = "http://localhost:{port}";
+        public string CheckpointDataTable {{ get; set; }} = "{ckptdatatable}";
     }}
 }}
 '''
 
 with open(watchdog_options_path, 'w') as file:
     file.write(csharp_code)
-
-with open(dashboard_path, 'r') as file:
-    dashboard = json.load(file)
-
-for var in dashboard.get('templating', {}).get('list', []):
-    if var.get('name') == 'dataTable':
-        var['current']['text'] = datatable
-        var['current']['value'] = datatable
-        var['query'] = datatable
-
-    if var.get('name') == 'bucket':
-        var['current']['text'] = bucket
-        var['current']['value'] = bucket
-        var['query'] = bucket
-
-with open(dashboard_path, 'w') as file:
-    json.dump(dashboard, file, indent=2)

@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 2,
   "links": [],
   "panels": [
     {
@@ -46,7 +46,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "<div style=\"\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    background: linear-gradient(135deg, #9B68A7 0%, #7A4A7C 100%);\r\n    border: 4px solid rgba(255, 255, 255, 0.1);\r\n    border-radius: 25px;\r\n    padding: 30px 50px;\r\n    font-family: Arial, sans-serif;\r\n    color: #ffffff;\r\n    max-width: 100%;\r\n    margin: 30px auto;\r\n    box-shadow: \r\n        0 10px 20px rgba(0, 0, 0, 0.2),\r\n        inset 0 2px 10px rgba(255, 255, 255, 0.1);\r\n\">\r\n    <div style=\"flex-grow: 1;\">\r\n        <h1 style=\"\r\n            font-size: 4.2em;\r\n            margin: 10px 0;\r\n            font-weight: 800;\r\n            letter-spacing: -1px;\r\n            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);\r\n        \">Watchdog Middleware <span style=\"font-size: 0.9em;\">\ud83d\udc36</span></h1>\r\n    </div>\r\n    <div style=\"\r\n        display: flex;\r\n        flex-direction: column;\r\n        align-items: flex-start;\r\n        margin-left: 40px;\r\n    \">\r\n        <p style=\"font-size: 1.3em; margin: 5px 0; font-weight: bold;\">By Rub\u00e9n Mart\u00ednez</p>\r\n        <a href=\"https://github.com/RubenMartinezSiso\" \r\n           target=\"_blank\" \r\n           style=\"text-decoration: none; display: inline-flex; align-items: center; background-color: #9B68A7; color: #ffffff; padding: 8px 20px; border-radius: 10px; font-weight: bold; font-size: 1.2em; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);\">\r\n            <span style=\"margin-right: 8px;\">\ud83d\ude80</span> Visit my GitHub\r\n        </a>\r\n    </div>\r\n</div>\r\n",
+        "content": "<div style=\"\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    background: linear-gradient(135deg, #9B68A7 0%, #7A4A7C 100%);\r\n    border: 4px solid rgba(255, 255, 255, 0.1);\r\n    border-radius: 25px;\r\n    padding: 30px 50px;\r\n    font-family: Arial, sans-serif;\r\n    color: #ffffff;\r\n    max-width: 100%;\r\n    margin: 30px auto;\r\n    box-shadow: \r\n        0 10px 20px rgba(0, 0, 0, 0.2),\r\n        inset 0 2px 10px rgba(255, 255, 255, 0.1);\r\n\">\r\n    <div style=\"flex-grow: 1;\">\r\n        <h1 style=\"\r\n            font-size: 4.2em;\r\n            margin: 10px 0;\r\n            font-weight: 800;\r\n            letter-spacing: -1px;\r\n            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);\r\n        \">Watchdog Middleware <span style=\"font-size: 0.9em;\">🐶</span></h1>\r\n    </div>\r\n    <div style=\"\r\n        display: flex;\r\n        flex-direction: column;\r\n        align-items: flex-start;\r\n        margin-left: 40px;\r\n    \">\r\n        <p style=\"font-size: 1.3em; margin: 5px 0; font-weight: bold;\">By Rubén Martínez</p>\r\n        <a href=\"https://github.com/RubenMartinezSiso\" \r\n           target=\"_blank\" \r\n           style=\"text-decoration: none; display: inline-flex; align-items: center; background-color: #9B68A7; color: #ffffff; padding: 8px 20px; border-radius: 10px; font-weight: bold; font-size: 1.2em; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);\">\r\n            <span style=\"margin-right: 8px;\">🚀</span> Visit my GitHub\r\n        </a>\r\n    </div>\r\n</div>\r\n",
         "mode": "markdown"
       },
       "pluginVersion": "11.4.0",
@@ -162,7 +162,7 @@
             "h": 8,
             "w": 4,
             "x": 0,
-            "y": 9
+            "y": 51
           },
           "id": 45,
           "options": {
@@ -203,7 +203,7 @@
               "useBackend": false
             }
           ],
-          "title": "\ud83c\udf10 $apiStatus",
+          "title": "🌐 $apiStatus",
           "type": "stat"
         },
         {
@@ -269,7 +269,7 @@
             "h": 8,
             "w": 20,
             "x": 4,
-            "y": 9
+            "y": 51
           },
           "id": 46,
           "options": {
@@ -306,11 +306,11 @@
               "useBackend": false
             }
           ],
-          "title": "\ud83c\udf10 $apiStatus",
+          "title": "🌐 $apiStatus",
           "type": "timeseries"
         }
       ],
-      "title": "\ud83d\ude80 API Status Overview",
+      "title": "🚀 API Status Overview",
       "type": "row"
     },
     {
@@ -332,7 +332,7 @@
             "h": 2,
             "w": 24,
             "x": 0,
-            "y": 102
+            "y": 8
           },
           "id": 23,
           "options": {
@@ -399,19 +399,19 @@
                       {
                         "options": {
                           "DELETE": {
-                            "color": "#f2495cb3",
+                            "color": "#f2495c80",
                             "index": 3
                           },
                           "GET": {
-                            "color": "#5795f2cc",
+                            "color": "#5795f280",
                             "index": 0
                           },
                           "POST": {
-                            "color": "#73bf69cc",
+                            "color": "#73bf6980",
                             "index": 1
                           },
                           "PUT": {
-                            "color": "#ff9830b3",
+                            "color": "#ff983080",
                             "index": 2
                           }
                         },
@@ -474,6 +474,10 @@
                       "type": "color-text",
                       "wrapText": false
                     }
+                  },
+                  {
+                    "id": "custom.width",
+                    "value": 120
                   }
                 ]
               },
@@ -491,7 +495,7 @@
                           "from": 0,
                           "result": {
                             "index": 0,
-                            "text": "\u2705"
+                            "text": "✅"
                           },
                           "to": 399
                         },
@@ -502,7 +506,7 @@
                           "from": 400,
                           "result": {
                             "index": 1,
-                            "text": "\u26a0\ufe0f"
+                            "text": "⚠️"
                           },
                           "to": 600
                         },
@@ -511,25 +515,50 @@
                     ]
                   }
                 ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Date"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 193
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Status"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 90
+                  }
+                ]
               }
             ]
           },
           "gridPos": {
-            "h": 11,
+            "h": 14,
             "w": 16,
             "x": 0,
-            "y": 104
+            "y": 10
           },
           "id": 26,
           "options": {
             "cellHeight": "sm",
             "footer": {
-              "countRows": false,
-              "fields": "",
+              "countRows": true,
+              "enablePagination": false,
+              "fields": [],
               "reducer": [
-                "sum"
+                "count"
               ],
-              "show": false
+              "show": true
             },
             "showHeader": true,
             "sortBy": []
@@ -542,7 +571,7 @@
                 "uid": "influx_ql_uid"
               },
               "hide": false,
-              "query": "SELECT\n    time,\n    req_timestamp AS \"Hiden Timestamp\", \n    req_timestamp AS \"Show details\", \n    req_api AS \"API\", \n    req_path AS \"Path\", \n    req_method AS \"Method\", \n    req_route_controller AS \"Controller\", \n    req_route_action AS \"Action\", \n    res_status_code AS \"Status\"\nFROM $dataTable\nWHERE $timeFilter AND req_api =~ /^($api)$/\nORDER BY time DESC\n",
+              "query": "SELECT\n    time,\n    req_timestamp AS \"Hiden Timestamp\", \n    req_timestamp AS \"Show details\", \n    req_api AS \"API\", \n    req_path AS \"Path\", \n    req_method AS \"Method\", \n    req_route_controller AS \"Controller\", \n    req_route_action AS \"Action\", \n    res_status_code AS \"Status\"\nFROM /^(?:$dataTable)$/\nWHERE $timeFilter AND req_api =~ /^($api)$/\nORDER BY time DESC\n",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "table"
@@ -571,6 +600,7 @@
                   "Time": 1
                 },
                 "renameByName": {
+                  "Show details": " ",
                   "Time": "Date"
                 }
               }
@@ -661,10 +691,10 @@
             ]
           },
           "gridPos": {
-            "h": 11,
+            "h": 14,
             "w": 8,
             "x": 16,
-            "y": 104
+            "y": 10
           },
           "id": 38,
           "options": {
@@ -689,7 +719,7 @@
                 "uid": "influx_flux_uid"
               },
               "hide": false,
-              "query": "data = from(bucket: \"$bucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"$dataTable\")\n  |> filter(fn: (r) => contains(value: r.req_api, set: ${api:json}))\n  |> filter(fn: (r) => r[\"_field\"] == \"req_timestamp\"\n        or r[\"_field\"] == \"req_query_string\"\n        or r[\"_field\"] == \"req_body\"\n        or r[\"_field\"] == \"req_host\"\n        or r[\"_field\"] == \"req_client_ip\"\n        or r[\"_field\"] == \"req_location\"\n        or r[\"_field\"] == \"req_headers\"\n        or r[\"_field\"] == \"res_timestamp\"\n        or r[\"_field\"] == \"res_status_code\"\n        or r[\"_field\"] == \"res_body\"\n        or r[\"_field\"] == \"res_duration_ms\"\n        or r[\"_field\"] == \"res_headers\"\n        ) \n  |> pivot(rowKey:[\"_time\"], columnKey: [\"_field\"], valueColumn: \"_value\") \n  |> filter(fn: (r) => r.req_timestamp == \"$detailsQuery\")\n  |> limit(n: 1)\n\ndata\n  |> map(fn: (r) => ({\n      Order: 1,\n      Field: \"Timestamp\",\n      Value: string(v: r.req_timestamp)\n  }))\n  |> yield(name: \"1_timestamp\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 2,\n      Field: \"API\",\n      Value: string(v: r.req_api)\n  }))\n  |> yield(name: \"2_api\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 3,\n      Field: \"Path\",\n      Value: string(v: r.req_path)\n  }))\n  |> yield(name: \"3_path\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 4,\n      Field: \"Method\",\n      Value: string(v: r.req_method)\n  }))\n  |> yield(name: \"4_method\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 5,\n      Field: \"Controller\",\n      Value: string(v: r.req_route_controller)\n  }))\n  |> yield(name: \"5_controller\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 6,\n      Field: \"Action\",\n      Value: string(v: r.req_route_action)\n  }))\n  |> yield(name: \"6_action\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 7,\n      Field: \"Query String\",\n      Value: string(v: r.req_query_string)\n  }))\n  |> yield(name: \"7_query_string\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 8,\n      Field: \"Body\",\n      Value: string(v: r.req_body)\n  }))\n  |> yield(name: \"8_body\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 9,\n      Field: \"Request Host\",\n      Value: string(v: r.req_host)\n  }))\n  |> yield(name: \"9_req_host\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 10,\n      Field: \"Request IP\",\n      Value: string(v: r.req_client_ip)\n  }))\n  |> yield(name: \"10_req_ip\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 11,\n      Field: \"Request Location\",\n      Value: string(v: r.req_location)\n  }))\n  |> yield(name: \"11_req_location\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 12,\n      Field: \"Request Headers\",\n      Value: string(v: r.req_headers)\n  }))\n  |> yield(name: \"12_req_headers\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 13,\n      Field: \"Response Timestamp\",\n      Value: string(v: r.res_timestamp)\n  }))\n  |> yield(name: \"13_res_timestamp\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 14,\n      Field: \"Response Code\",\n      Value: string(v: r.res_status_code)\n  }))\n  |> yield(name: \"14_res_status_code\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 15,\n      Field: \"Response Body\",\n      Value: string(v: r.res_body)\n  }))\n  |> yield(name: \"15_res_body\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 16,\n      Field: \"Response Time (ms)\",\n      Value: string(v: r.res_duration_ms)\n  }))\n  |> yield(name: \"16_res_duration_ms\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 17,\n      Field: \"Response Headers\",\n      Value: string(v: r.res_headers)\n  }))\n  |> yield(name: \"17_res_headers\")",
+              "query": "data = from(bucket: \"$bucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /${dataTable:regex}/)\n  |> filter(fn: (r) => contains(value: r.req_api, set: ${api:json}))\n  |> filter(fn: (r) => r[\"_field\"] == \"req_timestamp\"\n        or r[\"_field\"] == \"req_query_string\"\n        or r[\"_field\"] == \"req_body\"\n        or r[\"_field\"] == \"req_host\"\n        or r[\"_field\"] == \"req_client_ip\"\n        or r[\"_field\"] == \"req_location\"\n        or r[\"_field\"] == \"req_headers\"\n        or r[\"_field\"] == \"res_timestamp\"\n        or r[\"_field\"] == \"res_status_code\"\n        or r[\"_field\"] == \"res_body\"\n        or r[\"_field\"] == \"res_duration_ms\"\n        or r[\"_field\"] == \"res_headers\"\n        ) \n  |> pivot(rowKey:[\"_time\"], columnKey: [\"_field\"], valueColumn: \"_value\") \n  |> filter(fn: (r) => r.req_timestamp == \"$detailsQuery\")\n  |> limit(n: 1)\n\ndata\n  |> map(fn: (r) => ({\n      Order: 1,\n      Field: \"Timestamp\",\n      Value: string(v: r.req_timestamp)\n  }))\n  |> yield(name: \"1_timestamp\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 2,\n      Field: \"API\",\n      Value: string(v: r.req_api)\n  }))\n  |> yield(name: \"2_api\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 3,\n      Field: \"Path\",\n      Value: string(v: r.req_path)\n  }))\n  |> yield(name: \"3_path\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 4,\n      Field: \"Method\",\n      Value: string(v: r.req_method)\n  }))\n  |> yield(name: \"4_method\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 5,\n      Field: \"Controller\",\n      Value: string(v: r.req_route_controller)\n  }))\n  |> yield(name: \"5_controller\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 6,\n      Field: \"Action\",\n      Value: string(v: r.req_route_action)\n  }))\n  |> yield(name: \"6_action\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 7,\n      Field: \"Query String\",\n      Value: string(v: r.req_query_string)\n  }))\n  |> yield(name: \"7_query_string\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 8,\n      Field: \"Body\",\n      Value: string(v: r.req_body)\n  }))\n  |> yield(name: \"8_body\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 9,\n      Field: \"Request Host\",\n      Value: string(v: r.req_host)\n  }))\n  |> yield(name: \"9_req_host\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 10,\n      Field: \"Request IP\",\n      Value: string(v: r.req_client_ip)\n  }))\n  |> yield(name: \"10_req_ip\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 11,\n      Field: \"Request Location\",\n      Value: string(v: r.req_location)\n  }))\n  |> yield(name: \"11_req_location\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 12,\n      Field: \"Request Headers\",\n      Value: string(v: r.req_headers)\n  }))\n  |> yield(name: \"12_req_headers\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 13,\n      Field: \"Response Timestamp\",\n      Value: string(v: r.res_timestamp)\n  }))\n  |> yield(name: \"13_res_timestamp\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 14,\n      Field: \"Response Code\",\n      Value: string(v: r.res_status_code)\n  }))\n  |> yield(name: \"14_res_status_code\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 15,\n      Field: \"Response Body\",\n      Value: string(v: r.res_body)\n  }))\n  |> yield(name: \"15_res_body\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 16,\n      Field: \"Response Time (ms)\",\n      Value: string(v: r.res_duration_ms)\n  }))\n  |> yield(name: \"16_res_duration_ms\")\n\ndata\n  |> map(fn: (r) => ({\n      Order: 17,\n      Field: \"Response Headers\",\n      Value: string(v: r.res_headers)\n  }))\n  |> yield(name: \"17_res_headers\")",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "table"
@@ -792,6 +822,10 @@
                         "url": "/d/ee3qdl3l90zcwc/watchdog-middleware-techtiva?&var-detailsQuery=${__data.fields[\"Hiden Timestamp\"]}\n\r\n\r"
                       }
                     ]
+                  },
+                  {
+                    "id": "custom.width",
+                    "value": 120
                   }
                 ]
               },
@@ -806,26 +840,38 @@
                     "value": true
                   }
                 ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Date"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 170
+                  }
+                ]
               }
             ]
           },
           "gridPos": {
-            "h": 11,
+            "h": 14,
             "w": 12,
             "x": 0,
-            "y": 115
+            "y": 24
           },
           "id": 27,
           "options": {
             "cellHeight": "sm",
             "footer": {
-              "countRows": false,
+              "countRows": true,
               "enablePagination": false,
-              "fields": "",
+              "fields": [],
               "reducer": [
-                "sum"
+                "count"
               ],
-              "show": false
+              "show": true
             },
             "showHeader": true,
             "sortBy": []
@@ -838,7 +884,7 @@
                 "uid": "influx_ql_uid"
               },
               "hide": false,
-              "query": "SELECT \n    time,\n    req_timestamp AS \"Hiden Timestamp\", \n    req_timestamp AS \"Show details\", \n    req_api AS \"API\",\n    req_path AS \"Path\",\n    req_method AS \"Method\",\n    res_status_code AS \"Code\",\n    res_body AS \"Response Body\"\nFROM \n    \"$dataTable\"\nWHERE $timeFilter AND\n    res_status_code >= 400\n    AND req_api =~ /^($api)$/\nORDER BY \n    time DESC\n",
+              "query": "SELECT \n    time,\n    req_timestamp AS \"Hiden Timestamp\", \n    req_timestamp AS \"Show details\", \n    req_api AS \"API\",\n    req_path AS \"Path\",\n    req_method AS \"Method\",\n    res_status_code AS \"Code\",\n    res_body AS \"Response Body\"\nFROM /^(?:$dataTable)$/\nWHERE $timeFilter AND\n    res_status_code >= 400\n    AND req_api =~ /^($api)$/\nORDER BY \n    time DESC\n",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "table"
@@ -856,14 +902,15 @@
                 "indexByName": {
                   "API": 3,
                   "Code": 6,
-                  "Hiden Timestamp": 0,
+                  "Hiden Timestamp": 2,
                   "Method": 5,
                   "Path": 4,
                   "Response Body": 7,
-                  "Show details": 1,
-                  "Time": 2
+                  "Show details": 0,
+                  "Time": 1
                 },
                 "renameByName": {
+                  "Show details": " ",
                   "Time": "Date"
                 }
               }
@@ -882,7 +929,6 @@
                 "mode": "thresholds"
               },
               "mappings": [],
-              "min": -1,
               "thresholds": {
                 "mode": "absolute",
                 "steps": [
@@ -916,10 +962,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 11,
+            "h": 14,
             "w": 12,
             "x": 12,
-            "y": 115
+            "y": 24
           },
           "id": 16,
           "options": {
@@ -931,23 +977,23 @@
               "showLegend": false
             },
             "maxVizHeight": 300,
-            "minVizHeight": 25,
+            "minVizHeight": 50,
             "minVizWidth": 8,
-            "namePlacement": "auto",
+            "namePlacement": "top",
             "orientation": "horizontal",
             "reduceOptions": {
               "calcs": [
                 "lastNotNull"
               ],
               "fields": "/^Response Time \\(ms\\)$/",
-              "limit": 1000,
+              "limit": 5000,
               "values": true
             },
             "showUnfilled": true,
             "sizing": "manual",
             "text": {
-              "titleSize": 15,
-              "valueSize": 25
+              "titleSize": 18,
+              "valueSize": 28
             },
             "valueMode": "color"
           },
@@ -961,7 +1007,7 @@
               },
               "editorMode": "code",
               "format": "table",
-              "query": "from(bucket: \"$bucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"$dataTable\")\n  |> filter(fn: (r) => r[\"_field\"] == \"res_duration_ms\")\n  |> filter(fn: (r) => contains(value: r.req_api, set: ${api:json}))\n  |> keep(columns: [\"_time\", \"_value\", \"req_path\", \"req_method\"])\n  |> map(fn: (r) => ({\n       r with \n       _value: r._value,\n       combined: r.req_path + \" - \" + r.req_method\n     }))\n  |> drop(columns: [\"req_path\", \"req_method\"])\n  |> rename(columns: {_value: \"Response Time (ms)\", combined: \"_value\"})\n  |> sort(columns: [\"_time\"], desc: true)\n",
+              "query": "from(bucket: \"$bucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /${dataTable:regex}/)\n  |> filter(fn: (r) => r[\"_field\"] == \"res_duration_ms\")\n  |> filter(fn: (r) => contains(value: r.req_api, set: ${api:json}))\n  |> keep(columns: [\"_time\", \"_value\", \"req_path\", \"req_method\"])\n  |> map(fn: (r) => ({\n       r with \n       _value: r._value,\n       combined: r.req_path + \" - \" + r.req_method\n     }))\n  |> drop(columns: [\"req_path\", \"req_method\"])\n  |> rename(columns: {_value: \"Response Time (ms)\", combined: \"_value\"})\n  |> sort(columns: [\"_time\"], desc: true)\n",
               "rawQuery": true,
               "rawSql": "SELECT\r\n  CONCAT(req_path, ' ', req_method) AS \"Path + Method\",\r\n  res_duration_ms AS \"Response Time (ms)\"\r\nFROM \"$dataTable\"\r\nWHERE $__timeFilter(time) AND \"req_api\" IN (${api:singlequote})\r\nORDER BY time DESC\r\nLIMIT 15",
               "refId": "A",
@@ -1018,10 +1064,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 10,
+            "h": 12,
             "w": 10,
             "x": 0,
-            "y": 126
+            "y": 38
           },
           "id": 30,
           "options": {
@@ -1110,7 +1156,7 @@
                 "uid": "influx_ql_uid"
               },
               "hide": false,
-              "query": "SELECT \n    req_location AS \"Name\",\n    req_latitude AS \"Latitude\",\n    req_longitude AS \"Longitude\"\nFROM \"$dataTable\"\nWHERE $timeFilter AND req_api =~ /${api:regex}/\nGROUP BY req_location, req_latitude, req_longitude\n",
+              "query": "SELECT \n    req_location AS \"Name\",\n    req_latitude AS \"Latitude\",\n    req_longitude AS \"Longitude\"\nFROM /^(?:$dataTable)$/\nWHERE $timeFilter AND req_api =~ /${api:regex}/\nGROUP BY req_location, req_latitude, req_longitude\n",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "table"
@@ -1145,7 +1191,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "#8e3bb866"
+                    "color": "#8e3bb83b"
                   }
                 ]
               }
@@ -1154,28 +1200,33 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "Time"
+                  "options": "Client IP"
                 },
-                "properties": []
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 300
+                  }
+                ]
               }
             ]
           },
           "gridPos": {
-            "h": 10,
+            "h": 12,
             "w": 14,
             "x": 10,
-            "y": 126
+            "y": 38
           },
           "id": 28,
           "options": {
             "cellHeight": "sm",
             "footer": {
-              "countRows": false,
+              "countRows": true,
               "fields": "",
               "reducer": [
-                "sum"
+                "count"
               ],
-              "show": false
+              "show": true
             },
             "showHeader": true,
             "sortBy": []
@@ -1188,7 +1239,7 @@
                 "uid": "influx_ql_uid"
               },
               "hide": false,
-              "query": "SELECT\ntime,\nreq_host AS \"Host\",\nreq_client_ip AS \"Client IP\",\nreq_location AS \"Location\",\nreq_api AS \"API\"\nFROM\n\"$dataTable\"\nWHERE $timeFilter AND req_api =~ /^($api)$/\nORDER BY\ntime DESC",
+              "query": "SELECT\ntime,\nreq_host AS \"Host\",\nreq_client_ip AS \"Client IP\",\nreq_location AS \"Location\",\nreq_api AS \"API\"\nFROM /^(?:$dataTable)$/\nWHERE $timeFilter AND req_api =~ /^($api)$/\nORDER BY\ntime DESC",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "table"
@@ -1201,17 +1252,46 @@
               "options": {
                 "excludeByName": {},
                 "includeByName": {},
-                "indexByName": {},
+                "indexByName": {
+                  "API": 4,
+                  "Client IP": 1,
+                  "Host": 2,
+                  "Location": 3,
+                  "Time": 0
+                },
                 "renameByName": {
                   "Time": "Date"
                 }
+              }
+            },
+            {
+              "id": "groupToNestedTable",
+              "options": {
+                "fields": {
+                  "API": {
+                    "aggregations": [],
+                    "operation": "groupby"
+                  },
+                  "Client IP": {
+                    "aggregations": [],
+                    "operation": "groupby"
+                  },
+                  "Host": {
+                    "aggregations": [],
+                    "operation": "groupby"
+                  },
+                  "Location": {
+                    "aggregations": []
+                  }
+                },
+                "showSubframeHeaders": true
               }
             }
           ],
           "type": "table"
         }
       ],
-      "title": "\ud83d\udce5 Last Requests",
+      "title": "📥 Last Requests",
       "type": "row"
     },
     {
@@ -1233,7 +1313,7 @@
             "h": 2,
             "w": 24,
             "x": 0,
-            "y": 313
+            "y": 2928
           },
           "id": 18,
           "options": {
@@ -1273,9 +1353,9 @@
           },
           "gridPos": {
             "h": 12,
-            "w": 8,
+            "w": 7,
             "x": 0,
-            "y": 315
+            "y": 2930
           },
           "id": 44,
           "options": {
@@ -1308,7 +1388,7 @@
                 "type": "influxdb",
                 "uid": "influx_flux_uid"
               },
-              "query": "from(bucket: \"$bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement == \"$dataTable\")\r\n  |> filter(fn: (r) => r._field == \"req_timestamp\")\r\n  |> filter(fn: (r) => exists r.req_api)\r\n  |> filter(fn: (r) => contains(value: r.req_api, set: ${api:json}))\r\n  |> group(columns: [\"req_api\"])\r\n  |> distinct(column: \"_value\")\r\n  |> count()\r\n  |> rename(columns: {_value: \"Count\", req_api: \"API\"})\r\n  |> map(fn: (r) => ({r with label: string(v: r.API) }))\r\n",
+              "query": "from(bucket: \"$bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement =~ /${dataTable:regex}/)\r\n  |> filter(fn: (r) => r._field == \"req_timestamp\")\r\n  |> filter(fn: (r) => exists r.req_api)\r\n  |> filter(fn: (r) => contains(value: r.req_api, set: ${api:json}))\r\n  |> group(columns: [\"req_api\"])\r\n  |> distinct(column: \"_value\")\r\n  |> count()\r\n  |> rename(columns: {_value: \"Count\", req_api: \"API\"})\r\n  |> map(fn: (r) => ({r with label: string(v: r.API) }))\r\n",
               "refId": "A"
             }
           ],
@@ -1376,9 +1456,9 @@
           },
           "gridPos": {
             "h": 12,
-            "w": 16,
-            "x": 8,
-            "y": 315
+            "w": 17,
+            "x": 7,
+            "y": 2930
           },
           "id": 42,
           "options": {
@@ -1416,7 +1496,7 @@
               ],
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "from(bucket: \"$bucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"$dataTable\")\n  |> filter(fn: (r) => r[\"_field\"] == \"req_timestamp\")\n  |> filter(fn: (r) => contains(value: r.req_api, set: ${api:json}))\n  |> group(columns: [\"req_api\"])\n  |> window(every: 1d)\n  |> count()\n  |> group(columns: [\"req_api\", \"_start\"])\n  |> pivot(rowKey: [\"_start\"], columnKey: [\"req_api\"], valueColumn: \"_value\")\n  |> map(fn: (r) => ({ r with time: r._start }))\n  |> yield(name: \"count_by_api_per_day\")\n",
+              "query": "from(bucket: \"$bucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /${dataTable:regex}/)\n  |> filter(fn: (r) => r[\"_field\"] == \"req_timestamp\")\n  |> filter(fn: (r) => contains(value: r.req_api, set: ${api:json}))\n  |> group(columns: [\"req_api\"])\n  |> window(every: 1d)\n  |> count()\n  |> group(columns: [\"req_api\", \"_start\"])\n  |> pivot(rowKey: [\"_start\"], columnKey: [\"req_api\"], valueColumn: \"_value\")\n  |> map(fn: (r) => ({ r with time: r._start }))\n  |> yield(name: \"count_by_api_per_day\")\n",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "table",
@@ -1453,9 +1533,9 @@
           },
           "gridPos": {
             "h": 2,
-            "w": 8,
+            "w": 10,
             "x": 0,
-            "y": 327
+            "y": 2942
           },
           "id": 40,
           "maxPerRow": 8,
@@ -1480,9 +1560,9 @@
           },
           "gridPos": {
             "h": 2,
-            "w": 8,
-            "x": 8,
-            "y": 327
+            "w": 7,
+            "x": 10,
+            "y": 2942
           },
           "id": 53,
           "maxPerRow": 8,
@@ -1492,7 +1572,7 @@
               "showLineNumbers": false,
               "showMiniMap": false
             },
-            "content": "<div style=\"text-align: left; width: 100%;\">\n    <hr style=\"border: 1px solid white; margin-top: 5px; margin-bottom: 10px;\">\n    <h2 style=\"font-weight: bold; font-size: 1.8em; margin-top: 0; margin-bottom: 5px;\">Top 10 Path + Method Count</h2>\n</div>\n",
+            "content": "<div style=\"text-align: left; width: 100%;\">\n    <hr style=\"border: 1px solid white; margin-top: 5px; margin-bottom: 10px;\">\n    <h2 style=\"font-weight: bold; font-size: 1.8em; margin-top: 0; margin-bottom: 5px;\">Path + Method Count</h2>\n</div>\n",
             "mode": "markdown"
           },
           "pluginVersion": "11.4.0",
@@ -1507,9 +1587,9 @@
           },
           "gridPos": {
             "h": 2,
-            "w": 8,
-            "x": 16,
-            "y": 327
+            "w": 7,
+            "x": 17,
+            "y": 2942
           },
           "id": 54,
           "maxPerRow": 8,
@@ -1519,7 +1599,7 @@
               "showLineNumbers": false,
               "showMiniMap": false
             },
-            "content": "<div style=\"text-align: left; width: 100%;\">\n    <hr style=\"border: 1px solid white; margin-top: 5px; margin-bottom: 10px;\">\n    <h2 style=\"font-weight: bold; font-size: 1.8em; margin-top: 0; margin-bottom: 5px;\">Top 10 Controller + Action Count</h2>\n</div>\n",
+            "content": "<div style=\"text-align: left; width: 100%;\">\n    <hr style=\"border: 1px solid white; margin-top: 5px; margin-bottom: 10px;\">\n    <h2 style=\"font-weight: bold; font-size: 1.8em; margin-top: 0; margin-bottom: 5px;\">Controller + Action Count</h2>\n</div>\n",
             "mode": "markdown"
           },
           "pluginVersion": "11.4.0",
@@ -1572,10 +1652,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 14,
-            "w": 8,
+            "h": 18,
+            "w": 10,
             "x": 0,
-            "y": 329
+            "y": 2944
           },
           "id": 20,
           "maxPerRow": 8,
@@ -1588,21 +1668,24 @@
               "showLegend": false
             },
             "maxVizHeight": 300,
-            "minVizHeight": 16,
+            "minVizHeight": 50,
             "minVizWidth": 8,
-            "namePlacement": "auto",
+            "namePlacement": "top",
             "orientation": "horizontal",
             "reduceOptions": {
               "calcs": [
                 "lastNotNull"
               ],
               "fields": "",
-              "limit": 15,
+              "limit": 5000,
               "values": true
             },
             "showUnfilled": true,
-            "sizing": "auto",
-            "text": {},
+            "sizing": "manual",
+            "text": {
+              "titleSize": 18,
+              "valueSize": 28
+            },
             "valueMode": "color"
           },
           "pluginVersion": "11.4.0",
@@ -1617,7 +1700,7 @@
               },
               "editorMode": "code",
               "format": "table",
-              "query": "from(bucket: \"$bucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"$dataTable\")\n  |> filter(fn: (r) => r[\"req_api\"] == \"$api\")\n  |> filter(fn: (r) => r[\"_field\"] == \"res_duration_ms\")\n  |> group(columns: [\"req_path\", \"req_method\"])\n  |> mean(column: \"_value\")\n  |> map(fn: (r) => ({ r with title: r[\"req_path\"] + \" - \" + r[\"req_method\"] }))\n  |> sort(columns: [\"_value\"], desc: true)\n",
+              "query": "from(bucket: \"$bucket\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] =~ /${dataTable:regex}/)\n  |> filter(fn: (r) => r[\"req_api\"] == \"$api\")\n  |> filter(fn: (r) => r[\"_field\"] == \"res_duration_ms\")\n  |> group(columns: [\"req_path\", \"req_method\"])\n  |> mean(column: \"_value\")\n  |> map(fn: (r) => ({ r with title: r[\"req_path\"] + \" - \" + r[\"req_method\"] }))\n  |> sort(columns: [\"_value\"], desc: true)\n",
               "rawQuery": true,
               "rawSql": "SELECT\r\n  req_path AS \"Path\",\r\n  req_method AS \"Method\",\r\n  AVG(res_duration_ms) AS \"Avg Duration (ms)\"\r\nFROM \"$dataTable\"\r\nWHERE $__timeFilter(time) AND req_api = '$api'\r\nGROUP BY req_path, req_method\r\nORDER BY \"Avg Duration (ms)\" DESC",
               "refId": "A",
@@ -1640,7 +1723,7 @@
               }
             }
           ],
-          "title": "\ud83c\udf10 $api",
+          "title": "🌐 $api",
           "transformations": [
             {
               "id": "merge",
@@ -1686,10 +1769,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 14,
-            "w": 8,
-            "x": 8,
-            "y": 329
+            "h": 18,
+            "w": 7,
+            "x": 10,
+            "y": 2944
           },
           "id": 35,
           "maxPerRow": 8,
@@ -1702,23 +1785,23 @@
               "showLegend": false
             },
             "maxVizHeight": 300,
-            "minVizHeight": 35,
+            "minVizHeight": 50,
             "minVizWidth": 8,
-            "namePlacement": "auto",
+            "namePlacement": "top",
             "orientation": "horizontal",
             "reduceOptions": {
               "calcs": [
                 "lastNotNull"
               ],
               "fields": "",
-              "limit": 10,
+              "limit": 5000,
               "values": true
             },
             "showUnfilled": true,
-            "sizing": "auto",
+            "sizing": "manual",
             "text": {
-              "titleSize": 14,
-              "valueSize": 30
+              "titleSize": 18,
+              "valueSize": 28
             },
             "valueMode": "color"
           },
@@ -1731,11 +1814,11 @@
                 "type": "influxdb",
                 "uid": "influx_flux_uid"
               },
-              "query": "from(bucket: \"$bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement == \"$dataTable\")\r\n  |> filter(fn: (r) => r.req_api == \"$api\")\r\n  |> group(columns: [\"req_path\", \"req_method\"])\r\n  |> count()\r\n  |> map(fn: (r) => ({\r\n       Count: r._value / 14,\r\n       title: r.req_path  + \" - \" + r.req_method\r\n     }))\r\n  |> group()\r\n  |> sort(columns: [\"Count\"], desc: true)",
+              "query": "from(bucket: \"$bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement =~ /${dataTable:regex}/)\r\n  |> filter(fn: (r) => r.req_api == \"$api\")\r\n  |> group(columns: [\"req_path\", \"req_method\"])\r\n  |> count()\r\n  |> map(fn: (r) => ({\r\n       Count: r._value / 14,\r\n       title: r.req_path  + \" - \" + r.req_method\r\n     }))\r\n  |> group()\r\n  |> sort(columns: [\"Count\"], desc: true)",
               "refId": "A"
             }
           ],
-          "title": "\ud83c\udf10 $api",
+          "title": "🌐 $api",
           "type": "bargauge"
         },
         {
@@ -1762,10 +1845,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 14,
-            "w": 8,
-            "x": 16,
-            "y": 329
+            "h": 18,
+            "w": 7,
+            "x": 17,
+            "y": 2944
           },
           "id": 36,
           "maxPerRow": 8,
@@ -1778,23 +1861,22 @@
               "showLegend": false
             },
             "maxVizHeight": 300,
-            "minVizHeight": 16,
+            "minVizHeight": 50,
             "minVizWidth": 8,
-            "namePlacement": "auto",
+            "namePlacement": "top",
             "orientation": "horizontal",
             "reduceOptions": {
               "calcs": [
                 "lastNotNull"
               ],
               "fields": "",
-              "limit": 10,
               "values": true
             },
             "showUnfilled": true,
-            "sizing": "auto",
+            "sizing": "manual",
             "text": {
-              "titleSize": 14,
-              "valueSize": 30
+              "titleSize": 18,
+              "valueSize": 28
             },
             "valueMode": "color"
           },
@@ -1807,16 +1889,444 @@
                 "type": "influxdb",
                 "uid": "influx_flux_uid"
               },
-              "query": "from(bucket: \"$bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement == \"$dataTable\")\r\n  |> filter(fn: (r) => r.req_api == \"$api\")\r\n  |> group(columns: [\"req_route_controller\", \"req_route_action\"])\r\n  |> count()\r\n  |> map(fn: (r) => ({\r\n       Count: r._value / 14,\r\n       title: r.req_route_controller  + \" - \" + r.req_route_action\r\n     }))\r\n  |> group()\r\n  |> sort(columns: [\"Count\"], desc: true)",
+              "query": "from(bucket: \"$bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement =~ /${dataTable:regex}/)\r\n  |> filter(fn: (r) => r.req_api == \"$api\")\r\n  |> group(columns: [\"req_route_controller\", \"req_route_action\"])\r\n  |> count()\r\n  |> map(fn: (r) => ({\r\n       Count: r._value / 14,\r\n       title: r.req_route_controller  + \" - \" + r.req_route_action\r\n     }))\r\n  |> group()\r\n  |> sort(columns: [\"Count\"], desc: true)",
               "refId": "A"
             }
           ],
-          "title": "\ud83c\udf10 $api",
+          "title": "🌐 $api",
           "type": "bargauge"
         }
       ],
-      "title": "\ud83d\udcca API Statistics",
+      "title": "📊 API Statistics",
       "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 9
+      },
+      "id": 56,
+      "panels": [
+        {
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 2,
+            "w": 24,
+            "x": 0,
+            "y": 10
+          },
+          "id": 57,
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
+            },
+            "content": "<div style=\"text-align: left; width: 100%;\">\r\n    <hr style=\"border: 1px solid white; margin-top: 5px; margin-bottom: 10px;\">\r\n    <h2 style=\"font-weight: bold; font-size: 1.8em; margin-top: 0; margin-bottom: 5px;\">Checkpoint Logger</h2>\r\n</div>\r\n",
+            "mode": "html"
+          },
+          "pluginVersion": "11.4.0",
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "influx_ql_uid"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "thresholds"
+              },
+              "custom": {
+                "align": "left",
+                "cellOptions": {
+                  "applyToRow": true,
+                  "mode": "gradient",
+                  "type": "color-background"
+                },
+                "filterable": true,
+                "inspect": false
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "#94949426"
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Method"
+                },
+                "properties": [
+                  {
+                    "id": "custom.cellOptions",
+                    "value": {
+                      "applyToRow": true,
+                      "mode": "gradient",
+                      "type": "color-background",
+                      "wrapText": false
+                    }
+                  },
+                  {
+                    "id": "mappings",
+                    "value": [
+                      {
+                        "options": {
+                          "DELETE": {
+                            "color": "#f2495cb3",
+                            "index": 3
+                          },
+                          "GET": {
+                            "color": "blue",
+                            "index": 0
+                          },
+                          "POST": {
+                            "color": "green",
+                            "index": 1
+                          },
+                          "PUT": {
+                            "color": "#ff9830b3",
+                            "index": 2
+                          }
+                        },
+                        "type": "value"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Message"
+                },
+                "properties": [
+                  {
+                    "id": "custom.inspect",
+                    "value": true
+                  },
+                  {
+                    "id": "custom.cellOptions",
+                    "value": {
+                      "type": "auto",
+                      "wrapText": true
+                    }
+                  },
+                  {
+                    "id": "custom.inspect",
+                    "value": false
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Data"
+                },
+                "properties": [
+                  {
+                    "id": "custom.inspect",
+                    "value": true
+                  },
+                  {
+                    "id": "custom.cellOptions",
+                    "value": {
+                      "type": "json-view"
+                    }
+                  }
+                ]
+              },
+              {
+                "matcher": {
+                  "id": "byName",
+                  "options": "Date"
+                },
+                "properties": [
+                  {
+                    "id": "custom.width",
+                    "value": 200
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 13,
+            "w": 24,
+            "x": 0,
+            "y": 12
+          },
+          "id": 55,
+          "options": {
+            "cellHeight": "md",
+            "footer": {
+              "countRows": true,
+              "fields": "",
+              "reducer": [
+                "count"
+              ],
+              "show": true
+            },
+            "showHeader": true,
+            "sortBy": []
+          },
+          "pluginVersion": "11.4.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "influx_ql_uid"
+              },
+              "hide": false,
+              "query": "SELECT\n    time,\n    ckpt_api AS \"API\",\n    ckpt_message AS \"Message\", \n    ckpt_data AS \"Data\",\n    ckpt_path AS \"Path\", \n    ckpt_method AS \"Method\", \n    ckpt_controller AS \"Controller\", \n    ckpt_action AS \"Action\",\n    ckpt_ip AS \"IP\"\nFROM /^(?:$ckptDataTable)$/\nWHERE $timeFilter AND ckpt_api =~ /^($api)$/\nORDER BY time DESC\n",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "table"
+            }
+          ],
+          "title": "Checkpoints",
+          "transformations": [
+            {
+              "id": "organize",
+              "options": {
+                "excludeByName": {
+                  "API": false,
+                  "Hiden Timestamp": false,
+                  "Time": false
+                },
+                "includeByName": {},
+                "indexByName": {
+                  "API": 3,
+                  "Action": 7,
+                  "Controller": 6,
+                  "Data": 2,
+                  "IP": 8,
+                  "Message": 1,
+                  "Method": 5,
+                  "Path": 4,
+                  "Time": 0
+                },
+                "renameByName": {
+                  "Time": "Date"
+                }
+              }
+            },
+            {
+              "id": "groupToNestedTable",
+              "options": {
+                "fields": {
+                  "API": {
+                    "aggregations": []
+                  },
+                  "Data": {
+                    "aggregations": [],
+                    "operation": "groupby"
+                  },
+                  "Date": {
+                    "aggregations": [],
+                    "operation": "groupby"
+                  },
+                  "Message": {
+                    "aggregations": [],
+                    "operation": "groupby"
+                  },
+                  "Method": {
+                    "aggregations": []
+                  }
+                },
+                "showSubframeHeaders": true
+              }
+            }
+          ],
+          "type": "table"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "influx_flux_uid"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                }
+              },
+              "mappings": []
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 12,
+            "w": 7,
+            "x": 0,
+            "y": 25
+          },
+          "id": 58,
+          "options": {
+            "displayLabels": [
+              "name",
+              "percent"
+            ],
+            "legend": {
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "pieType": "pie",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": true
+            },
+            "tooltip": {
+              "mode": "single",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "11.4.0",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "influx_flux_uid"
+              },
+              "query": "from(bucket: \"$bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement =~ /${ckptDataTable:regex}/)\r\n  |> filter(fn: (r) => r._field == \"ckpt_timestamp\")\r\n  |> filter(fn: (r) => exists r.ckpt_api)\r\n  |> group(columns: [\"ckpt_api\"])\r\n  |> distinct(column: \"_value\")\r\n  |> count()\r\n  |> rename(columns: {_value: \"Count\", ckpt_api: \"API\"})\r\n  |> map(fn: (r) => ({ r with label: string(v: r.API) }))\r\n",
+              "refId": "A"
+            }
+          ],
+          "title": "Use of Checkpoints",
+          "type": "piechart"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "influx_flux_uid"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "custom": {
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "scaleDistribution": {
+                  "type": "linear"
+                }
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 12,
+            "w": 17,
+            "x": 7,
+            "y": 25
+          },
+          "id": 59,
+          "options": {
+            "calculate": false,
+            "cellGap": 10,
+            "color": {
+              "exponent": 0.6,
+              "fill": "#8e3bb8",
+              "min": 0,
+              "mode": "scheme",
+              "reverse": false,
+              "scale": "linear",
+              "scheme": "Spectral",
+              "steps": 60
+            },
+            "exemplars": {
+              "color": "#ff00ffb3"
+            },
+            "filterValues": {
+              "le": 1e-9
+            },
+            "legend": {
+              "show": true
+            },
+            "rowsFrame": {
+              "layout": "auto"
+            },
+            "tooltip": {
+              "mode": "single",
+              "showColorScale": false,
+              "yHistogram": false
+            },
+            "yAxis": {
+              "axisPlacement": "left",
+              "reverse": false
+            }
+          },
+          "pluginVersion": "11.4.0",
+          "targets": [
+            {
+              "query": "from(bucket: \"$bucket\")\r\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\r\n  |> filter(fn: (r) => r._measurement =~ /${ckptDataTable:regex}/)\r\n  |> filter(fn: (r) => r._field == \"ckpt_timestamp\")\r\n  |> filter(fn: (r) => contains(value: r.ckpt_api, set: ${api:json}))\r\n  |> group(columns: [\"ckpt_api\"])\r\n  |> window(every: 1h)\r\n  |> count()\r\n  |> group(columns: [\"ckpt_api\", \"_start\"])\r\n  |> pivot(rowKey: [\"_start\"], columnKey: [\"ckpt_api\"], valueColumn: \"_value\")\r\n  |> map(fn: (r) => ({ r with time: r._start }))\r\n  |> yield(name: \"heatmap_data\")\r\n",
+              "refId": "A"
+            }
+          ],
+          "title": "Checkpoint Heatmap",
+          "transformations": [
+            {
+              "id": "merge",
+              "options": {}
+            }
+          ],
+          "type": "heatmap"
+        }
+      ],
+      "title": "🚩 Checkpoint Logger",
+      "type": "row"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 10
+      },
+      "id": 60,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<div style=\"\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    border-top: 2px solid rgba(155, 104, 167, 0.3);\n    padding: 20px 30px;\n    font-family: Arial, sans-serif;\n    color: #9B68A7;\n    max-width: 100%;\n    margin: 25px auto 0;\n    font-size: 1em;\n\">\n    <div style=\"flex-grow: 1;\">\n        <p style=\"margin: 0; font-size: 1.1em;\">Watchdog Middleware: Vigilant API Monitoring</p>\n        <p style=\"margin: 8px 0 0; font-size: 1em; color: #7A4A7C;\">\n            ⚾️🐕\n        </p>\n    </div>\n    <div style=\"\n        display: flex;\n        flex-direction: column;\n        align-items: flex-end;\n    \">\n        <a href=\"https://github.com/RubenMartinezSiso/WatchdogMiddleware\" \n           target=\"_blank\" \n           style=\"text-decoration: none; color: #9B68A7; font-weight: bold; font-size: 1.1em;\">\n            📚 Explore the Repo\n        </a>\n        <p style=\"margin: 8px 0 0; font-size: 0.9em; color: #7A4A7C;\">\n            © 2025 Watchdog Middleware | v1.4.0\n        </p>\n    </div>\n</div>\n",
+        "mode": "markdown"
+      },
+      "pluginVersion": "11.4.0",
+      "title": "",
+      "transparent": true,
+      "type": "text"
     }
   ],
   "preload": false,
@@ -1826,29 +2336,27 @@
     "list": [
       {
         "current": {
-          "text": "watchdogdatatable",
-          "value": "watchdogdatatable"
+          "text": "",
+          "value": ""
         },
-        "description": "Name of InfluxDB data table",
-        "hide": 2,
-        "label": "Data Table",
-        "name": "dataTable",
-        "query": "watchdogdatatable",
-        "skipUrlSync": true,
-        "type": "constant"
-      },
-      {
-        "current": {
-          "text": "watchdogbucket",
-          "value": "watchdogbucket"
+        "datasource": {
+          "type": "influxdb",
+          "uid": "influx_ql_uid"
         },
-        "description": "Name of InfluxDB bucket",
-        "hide": 2,
+        "definition": "SHOW DATABASES",
+        "description": "Select the InfluxDB bucket that contains your data. This is the storage container for your measurements and time series.",
+        "includeAll": false,
         "label": "Bucket",
         "name": "bucket",
-        "query": "watchdogbucket",
-        "skipUrlSync": true,
-        "type": "constant"
+        "options": [],
+        "query": {
+          "query": "SHOW DATABASES",
+          "refId": "InfluxVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "/^(?!_monitoring$|_tasks$).+/",
+        "sort": 1,
+        "type": "query"
       },
       {
         "current": {
@@ -1863,19 +2371,75 @@
           "type": "influxdb",
           "uid": "influx_ql_uid"
         },
-        "definition": "SHOW TAG VALUES FROM $dataTable WITH KEY = \"req_api\" ",
-        "description": "List of APIs who have made a request to filter in general",
+        "definition": "SHOW MEASUREMENTS ON \"$bucket\" WHERE \"req_api\" != ''",
+        "description": "Choose the primary measurement (DataTable) that holds your API request/response data.",
         "includeAll": true,
-        "label": "API Request",
+        "label": "DataTable",
+        "multi": true,
+        "name": "dataTable",
+        "options": [],
+        "query": {
+          "query": "SHOW MEASUREMENTS ON \"$bucket\" WHERE \"req_api\" != ''",
+          "refId": "InfluxVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "current": {
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "influxdb",
+          "uid": "influx_ql_uid"
+        },
+        "definition": "SHOW MEASUREMENTS ON \"$bucket\" WHERE \"ckpt_api\" != ''",
+        "description": "Select the measurement where checkpoints are recorded.",
+        "includeAll": true,
+        "label": "Checkpoint DataTable",
+        "multi": true,
+        "name": "ckptDataTable",
+        "options": [],
+        "query": {
+          "query": "SHOW MEASUREMENTS ON \"$bucket\" WHERE \"ckpt_api\" != ''",
+          "refId": "InfluxVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "type": "query"
+      },
+      {
+        "current": {
+          "text": "All",
+          "value": [
+            "$__all"
+          ]
+        },
+        "datasource": {
+          "type": "influxdb",
+          "uid": "influx_ql_uid"
+        },
+        "definition": "SHOW TAG VALUES FROM /^(?:${dataTable:regex}|${ckptDataTable:regex})$/ WITH KEY IN (\"req_api\", \"ckpt_api\")",
+        "description": "Pick the API identifier to filter and group your data by a specific API instance for every section.",
+        "includeAll": true,
+        "label": "API",
         "multi": true,
         "name": "api",
         "options": [],
         "query": {
-          "query": "SHOW TAG VALUES FROM $dataTable WITH KEY = \"req_api\" ",
+          "query": "SHOW TAG VALUES FROM /^(?:${dataTable:regex}|${ckptDataTable:regex})$/ WITH KEY IN (\"req_api\", \"ckpt_api\")",
           "refId": "InfluxVariableQueryEditor-VariableQuery"
         },
         "refresh": 2,
         "regex": "",
+        "sort": 1,
         "type": "query"
       },
       {
@@ -1892,7 +2456,7 @@
           "uid": "prometheus_uid"
         },
         "definition": "label_values(probe_success, instance)",
-        "description": "List of APIs to filter in the API Status section",
+        "description": "Pick the API identifier to filter and group your data by a specific API instance ONLY for the API Status section.",
         "includeAll": true,
         "label": "API Status",
         "multi": true,
@@ -1905,6 +2469,7 @@
         },
         "refresh": 1,
         "regex": "",
+        "sort": 1,
         "type": "query"
       },
       {
@@ -1934,6 +2499,6 @@
   "timezone": "Europe/Madrid",
   "title": "Watchdog Middleware",
   "uid": "ee3qdl3l90zcwc",
-  "version": 1,
+  "version": 64,
   "weekStart": ""
 }

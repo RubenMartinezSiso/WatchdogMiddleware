@@ -13,7 +13,6 @@ namespace WatchdogMiddleware
     {
         private readonly WatchdogOptions _options;
         private readonly ILogger<CheckpointLogger> _logger;
-        private const string CHECKPOINT_MEASUREMENT = "checkpointsdatatable";
 
         public CheckpointLogger(WatchdogOptions options, ILogger<CheckpointLogger> logger)
         {
@@ -25,6 +24,9 @@ namespace WatchdogMiddleware
         {
             try
             {
+                if (_options.ActivateLogs)
+                    _logger.LogInformation("CheckpointLogger: Starting checkpoint processing");
+
                 string apiName = _options.ApiName != "Unknown API" ? _options.ApiName : ExtractApiName();
 
                 RouteData routeData = context.GetRouteData();
@@ -35,7 +37,7 @@ namespace WatchdogMiddleware
                 using var client = InfluxDBClientFactory.Create(_options.InfluxDbUrl, _options.InfluxDbToken.ToCharArray());
                 var writeApi = client.GetWriteApi();
 
-                var point = PointData.Measurement(CHECKPOINT_MEASUREMENT)
+                var point = PointData.Measurement(_options.CheckpointDataTable)
                     .Timestamp(DateTime.UtcNow, WritePrecision.Ms)
                     .Tag("ckpt_api", apiName)
                     .Tag("ckpt_path", context.Request.Path)
@@ -48,10 +50,14 @@ namespace WatchdogMiddleware
                     .Field("ckpt_data", additionalData != null ? JsonConvert.SerializeObject(additionalData) : "{}");
 
                 writeApi.WritePoint(point, _options.InfluxDbBucket, _options.InfluxDbOrg);
+
+                if (_options.ActivateLogs)
+                    _logger.LogInformation("CheckpointLogger: Process completed");
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "CheckpointLogger: Error al enviar el checkpoint a InfluxDB");
+                if (_options.ActivateLogs)
+                    _logger.LogError(ex, "CheckpointLogger: Error while sending checkpoint to InfluxDB");
             }
         }
 
@@ -68,7 +74,8 @@ namespace WatchdogMiddleware
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "CheckpointLogger: Error extracting API name from assembly");
+                if (_options.ActivateLogs)
+                    _logger.LogError(ex, "CheckpointLogger: Error extracting API name from assembly");
             }
             return _options.ApiName;
         }

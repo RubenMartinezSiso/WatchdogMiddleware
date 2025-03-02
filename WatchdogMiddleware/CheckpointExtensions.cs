@@ -21,7 +21,7 @@ namespace WatchdogMiddleware
         /// </summary>
         public static void LogCheckpoint(this HttpContext context, string message, Dictionary<string, object> additionalData = null)
         {
-            var options = new WatchdogOptions();
+            var options = WatchdogOptionsHolder.Options ?? new WatchdogOptions();
             var loggerFactory = context.RequestServices.GetService<ILoggerFactory>();
             var checkpointLogger = new CheckpointLogger(options, loggerFactory.CreateLogger<CheckpointLogger>());
             checkpointLogger.LogCheckpoint(context, message, additionalData);
