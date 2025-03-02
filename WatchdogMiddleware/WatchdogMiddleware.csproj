@@ -7,6 +7,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Docker\prometheus\NewFolder\**" />
+	  <EmbeddedResource Remove="Docker\prometheus\NewFolder\**" />
+	  <None Remove="Docker\prometheus\NewFolder\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 		<PackageReference Include="InfluxDB.Client" Version="4.18.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />

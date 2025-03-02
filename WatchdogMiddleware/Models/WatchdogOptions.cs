@@ -17,5 +17,6 @@ namespace WatchdogMiddleware.Models
         public string InfluxDbBucket { get; set; } = "watchdogbucket";
         public string DataTable { get; set; } = "watchdogdatatable";
         public string InfluxDbUrl { get; set; } = "http://localhost:8086";
+        public string CheckpointDataTable { get; set; } = "checkpointsdatatable";
     }
 }
