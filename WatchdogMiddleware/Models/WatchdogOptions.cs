@@ -9,9 +9,6 @@ namespace WatchdogMiddleware.Models
         public string ApiName { get; set; } = "Unknown API";
         public bool ActivateLogs { get; set; } = true;
         public List<SensitiveRoute> SensitiveRoutes { get; set; } = new List<SensitiveRoute>();
-
-        //public string InfluxDbHost { get; set; } = "influxdb";
-        //public string InfluxDbPort { get; set; } = "8086";
         public string InfluxDbToken { get; set; } = "1a4aeaa65859e8443d824ee73d82432f";
         public string InfluxDbOrg { get; set; } = "watchdogorg";
         public string InfluxDbBucket { get; set; } = "watchdogbucket";
