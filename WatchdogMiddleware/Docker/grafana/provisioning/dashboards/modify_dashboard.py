@@ -22,9 +22,6 @@ namespace WatchdogMiddleware.Models
         public string ApiName {{ get; set; }} = "Unknown API";
         public bool ActivateLogs {{ get; set; }} = true;
         public List<SensitiveRoute> SensitiveRoutes {{ get; set; }} = new List<SensitiveRoute>();
-
-        public string InfluxDbHost {{ get; set; }} = "{host}";
-        public string InfluxDbPort {{ get; set; }} = "{port}";
         public string InfluxDbToken {{ get; set; }} = "{token}";
         public string InfluxDbOrg {{ get; set; }} = "{org}";
         public string InfluxDbBucket {{ get; set; }} = "{bucket}";
