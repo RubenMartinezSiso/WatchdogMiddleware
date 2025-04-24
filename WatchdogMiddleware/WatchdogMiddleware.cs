@@ -210,7 +210,6 @@ namespace WatchdogMiddleware
 
         private async Task<(string Location, double? Latitude, double? Longitude)> GetLocationFromIp(string ip)
         {
-            ip = "88.4.132.1"; // For testing purposes
             if (string.IsNullOrEmpty(ip))
                 return ("Unknown Location", null, null);
 
