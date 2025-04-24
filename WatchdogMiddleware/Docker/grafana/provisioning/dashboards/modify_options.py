@@ -3,13 +3,13 @@ import os
 
 watchdog_options_path = '/etc/grafana/models/WatchdogOptions.cs'
 
-host = os.getenv('DOCKER_INFLUXDB_INIT_HOST', 'localhost')
+host = os.getenv('DOCKER_INFLUXDB_INIT_HOST', 'influxdb')
 port = os.getenv('DOCKER_INFLUXDB_INIT_PORT', '8086')
-token = os.getenv('DOCKER_INFLUXDB_INIT_ADMIN_TOKEN', 'default-token')
-org = os.getenv('DOCKER_INFLUXDB_INIT_ORG', 'default-org')
-bucket = os.getenv('DOCKER_INFLUXDB_INIT_BUCKET', 'default-bucket')
+token = os.getenv('DOCKER_INFLUXDB_INIT_ADMIN_TOKEN', '1a4aeaa65859e8443d824ee73d82432f')
+org = os.getenv('DOCKER_INFLUXDB_INIT_ORG', 'watchdogorg')
+bucket = os.getenv('DOCKER_INFLUXDB_INIT_BUCKET', 'watchdogbucket')
 datatable = os.getenv('DOCKER_INFLUXDB_INIT_DT', 'watchdogdatatable')
-ckptdatatable = os.getenv('DOCKER_INFLUXDB_INIT_CKPTDT', 'checkpointdatatable')
+ckptdatatable = os.getenv('DOCKER_INFLUXDB_INIT_CKPTDT', 'checkpointsdatatable')
 
 csharp_code = f'''using System;
 using System.Collections.Generic;

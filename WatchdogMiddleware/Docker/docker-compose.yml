@@ -28,7 +28,7 @@ services:
       - .env
     entrypoint: >
       /bin/sh -c "
-      python3 /etc/grafana/provisioning/dashboards/modify_dashboard.py &&
+      python3 /etc/grafana/provisioning/dashboards/modify_options.py &&
       /run.sh"
     environment:
       - GF_SMTP_ENABLED=${GF_SMTP_ENABLED}
