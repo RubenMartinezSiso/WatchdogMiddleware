@@ -135,6 +135,6 @@ Tests cover:
 
 If you find this useful or want to contribute, feel free to reach out or fork the project!
 
-> Rubén Martínez - [LinkedIn](https://www.linkedin.com/in/rubenmartinezsiso/) | [GitHub](https://github.com/RubenMartinezSiso)
+> Rubén Martínez - [LinkedIn](https://www.linkedin.com/in/ruben-martinez-siso/) | [GitHub](https://github.com/RubenMartinezSiso)
 
 ---
