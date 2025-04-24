@@ -2353,7 +2353,7 @@
           "query": "SHOW DATABASES",
           "refId": "InfluxVariableQueryEditor-VariableQuery"
         },
-        "refresh": 1,
+        "refresh": 2,
         "regex": "/^(?!_monitoring$|_tasks$).+/",
         "sort": 1,
         "type": "query"
@@ -2382,7 +2382,7 @@
           "query": "SHOW MEASUREMENTS ON \"$bucket\" WHERE \"req_api\" != ''",
           "refId": "InfluxVariableQueryEditor-VariableQuery"
         },
-        "refresh": 1,
+        "refresh": 2,
         "regex": "",
         "sort": 1,
         "type": "query"
@@ -2411,7 +2411,7 @@
           "query": "SHOW MEASUREMENTS ON \"$bucket\" WHERE \"ckpt_api\" != ''",
           "refId": "InfluxVariableQueryEditor-VariableQuery"
         },
-        "refresh": 1,
+        "refresh": 2,
         "regex": "",
         "type": "query"
       },
@@ -2467,7 +2467,7 @@
           "query": "label_values(probe_success, instance)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
-        "refresh": 1,
+        "refresh": 2,
         "regex": "",
         "sort": 1,
         "type": "query"

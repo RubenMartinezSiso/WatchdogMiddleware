@@ -8,7 +8,7 @@ public static class WatchdogMiddlewareExtensions
     /// 🐕 Logs incoming requests and outgoing responses to InfluxDB for monitoring.
     /// 
     /// Usage:
-    /// - Call this method in the `Configure` method of Startup.cs.
+    /// - Call this method in the `Configure` method of Program.cs or Startup.cs.
     /// - Optionally, pass a lambda to configure WatchdogOptions (e.g., API name, logging settings, etc.).
     /// 
     /// Example:
